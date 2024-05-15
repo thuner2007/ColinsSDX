@@ -1,0 +1,43 @@
+.mainDivSimpleInputWithRequired {
+  height: fit-content;
+  width: fit-content;
+}
+
+.inputSimpleInputWithRequired {
+  padding: 0.5rem;
+  padding-left: 1rem;
+
+  border: 2px solid black;
+  color: black;
+}
+
+.mandatorySpanSimpleInputWithRequired {
+  position: relative;
+  margin: 0;
+}
+
+.labelHeaderSimpleInputWithRequired {
+  font-size: 1.3rem;
+  font-weight: bold;
+
+  margin: 0;
+}
+
+.errorMessageSimpleInputWithRequired {
+  margin: 0;
+  margin-top: -1.3rem;
+
+  color: red;
+  font-size: 1rem;
+
+  height: 1.2rem;
+}
+.errorMessageSimpleInputWithRequired2 {
+  margin: 0;
+  margin-top: 0.2rem;
+
+  color: red;
+  font-size: 1rem;
+
+  height: 1.2rem;
+}

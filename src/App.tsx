@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import NavBarNormal1 from './components/NavBars/NavBarNormal1.tsx';
+import SimpleInputWithRequired from './components/InputFields/SimpleInputWithRequired.tsx';
 function App() {
   const consoleLogHey = () => {
     console.log('Hey!');
@@ -8,6 +9,8 @@ function App() {
   return (
     <div className="App">
       <NavBarNormal1
+        bgBlur="4px"
+        bgColor="rgba(153, 153, 255, 0.3)"
         height={'10vh'}
         items={[
           {
@@ -17,22 +20,17 @@ function App() {
           },
           {
             src: './ms-symbollockup_mssymbol_19.svg',
-            alt: 'item0',
+            alt: 'item1',
             onclick: consoleLogHey,
           },
           {
             src: './ms-symbollockup_mssymbol_19.svg',
-            alt: 'item0',
+            alt: 'item2',
             onclick: consoleLogHey,
           },
           {
             src: './ms-symbollockup_mssymbol_19.svg',
-            alt: 'item0',
-            onclick: consoleLogHey,
-          },
-          {
-            src: './ms-symbollockup_mssymbol_19.svg',
-            alt: 'item0',
+            alt: 'item3',
             onclick: consoleLogHey,
           },
         ]}
@@ -45,16 +43,20 @@ function App() {
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
-      <h1>TEST</h1>
-      <h1>TEST</h1>
-      <h1>TEST</h1>
-      <h1>TEST</h1>
-      <h1>TEST</h1>
-      <h1>TEST</h1>
-      <h1>TEST</h1>
-      <h1>TEST</h1>
-      <h1>TEST</h1>
-      <h1>TEST</h1>
+      <SimpleInputWithRequired
+        onTextChange={(text) => console.log(text.target.value)}
+        mandatory={true}
+        label="Name"
+        hasError={true}
+        errorMessage="Error message"
+      />{' '}
+      <SimpleInputWithRequired
+        onTextChange={(text) => console.log(text.target.value)}
+        mandatory={true}
+        label="Name"
+        hasError={true}
+        errorMessage="Error message"
+      />
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
