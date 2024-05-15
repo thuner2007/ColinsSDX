@@ -13,8 +13,6 @@ interface SimpleInputWithRequiredProps {
   errorMessage?: string;
   onTextChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
-{
-}
 
 const SimpleInputWithRequired: React.FC<SimpleInputWithRequiredProps> = ({
   showBorder,
@@ -39,7 +37,7 @@ const SimpleInputWithRequired: React.FC<SimpleInputWithRequiredProps> = ({
   const randomBorderColor = getRandomColor();
   return (
     <div
-      className="mandatorySpanSimpleInputWithRequired"
+      className="mainDivSimpleInputWithRequired"
       style={{ border: showBorder ? `2px solid ${randomBorderColor}` : 'none' }}
     >
       {label && <h2 className="labelHeaderSimpleInputWithRequired">{label}</h2>}

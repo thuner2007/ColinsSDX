@@ -1,0 +1,4 @@
+.mainDivVerticalItemListDiv {
+  display: flex;
+  flex-direction: column;
+}

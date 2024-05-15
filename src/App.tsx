@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import NavBarNormal1 from './components/NavBars/NavBarNormal1.tsx';
 import SimpleInputWithRequired from './components/InputFields/SimpleInputWithRequired.tsx';
+import VerticalItemListDiv from './components/Divs/VerticalItemListDiv/VerticalItemListDiv.tsx';
 function App() {
   const consoleLogHey = () => {
     console.log('Hey!');
@@ -43,20 +44,30 @@ function App() {
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
-      <SimpleInputWithRequired
-        onTextChange={(text) => console.log(text.target.value)}
-        mandatory={true}
-        label="Name"
-        hasError={true}
-        errorMessage="Error message"
-      />{' '}
-      <SimpleInputWithRequired
-        onTextChange={(text) => console.log(text.target.value)}
-        mandatory={true}
-        label="Name"
-        hasError={true}
-        errorMessage="Error message"
-      />
+
+      <VerticalItemListDiv>
+        <SimpleInputWithRequired
+          onTextChange={(text) => console.log(text.target.value)}
+          mandatory={true}
+          label="Name"
+          hasError={true}
+          errorMessage="Error message"
+        />
+        <SimpleInputWithRequired
+          onTextChange={(text) => console.log(text.target.value)}
+          mandatory={true}
+          label="Name"
+          hasError={true}
+          errorMessage="Error message"
+        />
+        <SimpleInputWithRequired
+          onTextChange={(text) => console.log(text.target.value)}
+          mandatory={true}
+          label="Name"
+          hasError={true}
+          errorMessage="Error message"
+        />
+      </VerticalItemListDiv>
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
