@@ -3,6 +3,7 @@ import './App.css';
 import NavBarNormal1 from './components/NavBars/NavBarNormal1.tsx';
 import SimpleInputWithRequired from './components/InputFields/SimpleInputWithRequired.tsx';
 import VerticalItemListDiv from './components/Divs/VerticalItemListDiv/VerticalItemListDiv.tsx';
+import HorizontalItemListDiv from './components/Divs/HorizontalItemListDiv/HorizontalItemListDiv.tsx';
 function App() {
   const consoleLogHey = () => {
     console.log('Hey!');
@@ -45,7 +46,7 @@ function App() {
       <h1>TEST</h1>
       <h1>TEST</h1>
 
-      <VerticalItemListDiv>
+      <HorizontalItemListDiv>
         <SimpleInputWithRequired
           onTextChange={(text) => console.log(text.target.value)}
           mandatory={true}
@@ -67,7 +68,7 @@ function App() {
           hasError={true}
           errorMessage="Error message"
         />
-      </VerticalItemListDiv>
+      </HorizontalItemListDiv>
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
