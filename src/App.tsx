@@ -5,6 +5,7 @@ import SimpleInputWithRequired from './components/InputFields/SimpleInputWithReq
 import VerticalItemListDiv from './components/Divs/VerticalItemListDiv/VerticalItemListDiv.tsx';
 import HorizontalItemListDiv from './components/Divs/HorizontalItemListDiv/HorizontalItemListDiv.tsx';
 import SimpleVerticalDropdown from './components/Dropdowns/SimpleVerticalDropdown/SimpleVerticalDropdown.tsx';
+import UploadFileWithPreview from './components/FileHandling/UploadFileWithPreview/UploadFileWithPreview.tsx';
 function App() {
   const consoleLogHey = () => {
     console.log('Hey!');
@@ -46,95 +47,10 @@ function App() {
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
-      <HorizontalItemListDiv>
-        <SimpleInputWithRequired
-          onTextChange={(text) => console.log(text.target.value)}
-          mandatory={true}
-          label="Name"
-          hasError={true}
-          errorMessage="Error message"
-        />
-        <SimpleInputWithRequired
-          onTextChange={(text) => console.log(text.target.value)}
-          mandatory={true}
-          label="Name"
-          hasError={true}
-          errorMessage="Error message"
-        />
-        <SimpleInputWithRequired
-          onTextChange={(text) => console.log(text.target.value)}
-          mandatory={true}
-          label="Name"
-          hasError={true}
-          errorMessage="Error message"
-        />
-      </HorizontalItemListDiv>
+      <UploadFileWithPreview showBorder={false} reseizable={true} />
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
-      <SimpleVerticalDropdown
-        label="TEST"
-        items={[
-          {
-            alt: 'item0',
-            onclick: consoleLogHey,
-          },
-          {
-            alt: 'item1',
-            onclick: consoleLogHey,
-          },
-          {
-            alt: 'item2',
-            onclick: consoleLogHey,
-          },
-          {
-            alt: 'item3',
-            onclick: consoleLogHey,
-          },
-        ]}
-      />
-      <SimpleVerticalDropdown
-        label="TEST"
-        items={[
-          {
-            alt: 'item0',
-            onclick: consoleLogHey,
-          },
-          {
-            alt: 'item1',
-            onclick: consoleLogHey,
-          },
-          {
-            alt: 'item2',
-            onclick: consoleLogHey,
-          },
-          {
-            alt: 'item3',
-            onclick: consoleLogHey,
-          },
-        ]}
-      />
-      <SimpleVerticalDropdown
-        label="TEST"
-        items={[
-          {
-            alt: 'item0',
-            onclick: consoleLogHey,
-          },
-          {
-            alt: 'item1',
-            onclick: consoleLogHey,
-          },
-          {
-            alt: 'item2',
-            onclick: consoleLogHey,
-          },
-          {
-            alt: 'item3',
-            onclick: consoleLogHey,
-          },
-        ]}
-      />
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
