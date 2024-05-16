@@ -8,7 +8,7 @@ interface SimpleInputWithRequiredProps {
   label?: string;
   fontSize?: string;
   borderRadius?: string;
-  mandatory?: boolean;
+  required?: boolean;
   hasError?: boolean;
   errorMessage?: string;
   onTextChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -19,7 +19,7 @@ const SimpleInputWithRequired: React.FC<SimpleInputWithRequiredProps> = ({
   width,
   placeholder,
   fontSize,
-  mandatory,
+  required,
   label,
   borderRadius,
   hasError,
@@ -40,7 +40,14 @@ const SimpleInputWithRequired: React.FC<SimpleInputWithRequiredProps> = ({
       className="mainDivSimpleInputWithRequired"
       style={{ border: showBorder ? `2px solid ${randomBorderColor}` : 'none' }}
     >
-      {label && <h2 className="labelHeaderSimpleInputWithRequired">{label}</h2>}
+      {label && (
+        <h2
+          className="labelHeaderSimpleInputWithRequired"
+          style={{ marginLeft: required ? '0.5rem' : '0' }}
+        >
+          {label}
+        </h2>
+      )}
 
       <input
         className="inputSimpleInputWithRequired"
@@ -52,12 +59,12 @@ const SimpleInputWithRequired: React.FC<SimpleInputWithRequiredProps> = ({
         placeholder={placeholder ? placeholder : 'Type here...'}
         onChange={onTextChange}
       />
-      {mandatory && (
+      {required && (
         <span
           className="mandatorySpanSimpleInputWithRequired"
           style={{
             bottom: label ? '4rem' : '2.2rem',
-            right: label ? '-3.8rem' : '-0.6rem',
+            right: label ? '0rem' : '-0.6rem',
             color: hasError ? 'red' : 'black',
           }}
         >
@@ -66,7 +73,7 @@ const SimpleInputWithRequired: React.FC<SimpleInputWithRequiredProps> = ({
       )}
       <p
         className={
-          mandatory
+          required
             ? 'errorMessageSimpleInputWithRequired'
             : 'errorMessageSimpleInputWithRequired2'
         }

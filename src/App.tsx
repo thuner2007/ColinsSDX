@@ -45,9 +45,14 @@ function App() {
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
+      <SimpleInputWithRequired
+        errorMessage="error"
+        hasError={true}
+        label="test"
+        required={true}
+      />
       <h1>TEST</h1>
       <h1>TEST</h1>
-      <UploadFileWithPreview showBorder={false} reseizable={true} />
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>

@@ -26,6 +26,7 @@
 .errorMessageSimpleInputWithRequired {
   margin: 0;
   margin-top: -1.3rem;
+  margin-left: 0.5rem;
 
   color: red;
   font-size: 1rem;
@@ -35,6 +36,7 @@
 .errorMessageSimpleInputWithRequired2 {
   margin: 0;
   margin-top: 0.2rem;
+  margin-left: 0.5rem;
 
   color: red;
   font-size: 1rem;
