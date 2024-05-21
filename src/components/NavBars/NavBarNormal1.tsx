@@ -38,7 +38,7 @@ const NavBarNormal1: React.FC<NavBarNormal1Props> = ({
   return (
     <div
       style={{
-        width: calcScrollBar === true ? 'calc(100vw - 15px)' : '100vw',
+        width: calcScrollBar === true ? 'calc(100vw - 10px)' : '100vw',
         height: height,
         backgroundColor: bgColor,
         borderBottom: disableBorder
