@@ -6,13 +6,14 @@ import VerticalItemListDiv from './components/Divs/VerticalItemListDiv/VerticalI
 import HorizontalItemListDiv from './components/Divs/HorizontalItemListDiv/HorizontalItemListDiv.tsx';
 import SimpleVerticalDropdown from './components/Dropdowns/SimpleVerticalDropdown/SimpleVerticalDropdown.tsx';
 import UploadFileWithPreview from './components/FileHandling/UploadFileWithPreview/UploadFileWithPreview.tsx';
+import NavBarWithComponents1 from './components/NavBars/NavBarWithComponents1.tsx';
 function App() {
   const consoleLogHey = () => {
     console.log('Hey!');
   };
   return (
     <div className="App">
-      <NavBarNormal1
+      {/* <NavBarNormal1
         bgBlur="4px"
         bgColor="rgba(153, 153, 255, 0.3)"
         height={'10vh'}
@@ -39,18 +40,27 @@ function App() {
           },
         ]}
         calcScrollBar={true}
-      />
+      /> */}
+      <NavBarWithComponents1
+        bgBlur="4px"
+        bgColor="rgba(153, 153, 255, 0.3)"
+        height={'10vh'}
+        calcScrollBar={true}
+      >
+        <SimpleVerticalDropdown
+          label="test"
+          items={['', '', '']}
+        ></SimpleVerticalDropdown>
+        <SimpleVerticalDropdown
+          label="test"
+          items={['', '', '']}
+        ></SimpleVerticalDropdown>{' '}
+      </NavBarWithComponents1>
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
-      <SimpleInputWithRequired
-        errorMessage="error"
-        hasError={true}
-        label="test"
-        required={true}
-      />
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
