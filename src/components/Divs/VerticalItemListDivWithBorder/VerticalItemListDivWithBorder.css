@@ -1,0 +1,4 @@
+.mainDivVerticalItemListDivWithBorder {
+  display: flex;
+  flex-direction: column;
+}

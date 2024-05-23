@@ -1,0 +1,4 @@
+.mainDivHorizontalItemListDivWithBorder {
+  display: flex;
+  flex-direction: row;
+}
