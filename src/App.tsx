@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import NavBarNormal1 from './components/NavBars/NavBarNormal1.tsx';
-import SimpleInputWithRequired from './components/InputFields/SimpleInputWithRequired.tsx';
 import VerticalItemListDiv from './components/Divs/VerticalItemListDiv/VerticalItemListDiv.tsx';
 import HorizontalItemListDiv from './components/Divs/HorizontalItemListDiv/HorizontalItemListDiv.tsx';
 import SimpleVerticalDropdown from './components/Dropdowns/SimpleVerticalDropdown/SimpleVerticalDropdown.tsx';
@@ -9,6 +8,8 @@ import UploadFileWithPreview from './components/FileHandling/UploadFileWithPrevi
 import NavBarWithComponents1 from './components/NavBars/NavBarWithComponents1.tsx';
 import HorizontalItemListDivWithBorder from './components/Divs/HorizontalItemListDivWithBorder/HorizontalItemListDivWithBorder.tsx';
 import VerticalItemListDivWithBorder from './components/Divs/VerticalItemListDivWithBorder/VerticalItemListDivWithBorder.tsx';
+import SimpleBigTextInputWithRe from './components/InputFields/SimpleBigTextInputWithRequired/SimpleBigTextInputWithRequired.tsx';
+import SimpleBigTextInputWithRequired from './components/InputFields/SimpleBigTextInputWithRequired/SimpleBigTextInputWithRequired.tsx';
 function App() {
   const consoleLogHey = () => {
     console.log('Hey!');
@@ -51,12 +52,20 @@ function App() {
       >
         <SimpleVerticalDropdown
           label="test"
-          items={['', '', '']}
+          items={[
+            { label: 'item1', onclick: consoleLogHey },
+            { label: 'item1', onclick: consoleLogHey },
+            { label: 'item1', onclick: consoleLogHey },
+          ]}
         ></SimpleVerticalDropdown>
         <SimpleVerticalDropdown
           label="test"
-          items={['', '', '']}
-        ></SimpleVerticalDropdown>{' '}
+          items={[
+            { label: 'item1', onclick: consoleLogHey },
+            { label: 'item1', onclick: consoleLogHey },
+            { label: 'item1', onclick: consoleLogHey },
+          ]}
+        ></SimpleVerticalDropdown>
       </NavBarWithComponents1>
       <h1>TEST</h1>
       <h1>TEST</h1>
@@ -76,6 +85,7 @@ function App() {
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
+      <SimpleBigTextInputWithRequired label="test2" overflow='hidden' />
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
