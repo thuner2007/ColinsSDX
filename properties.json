@@ -138,5 +138,44 @@
     "borderRadius": "string, optional, default='10px'",
     "backGroundShadow": "string, optional, default='grey'",
     "example": "<SimpleScrollBar color='red' backGroundColor='white' hoverColor='black' width='15px' borderRadius='5px' backGroundShadow='rgba(0, 0, 0, 0.1)' />"
+  },
+
+  "SimpleButton1": {
+    "description": "This component is a customizable button with various styling options and an onClick event handler.",
+    "info": "Supports customizable appearance and behavior for a button",
+    "label": "string, optional, default='Click me!'",
+    "width": "string, optional, default='200px'",
+    "height": "string, optional, default='50px'",
+    "bgColor": "string, optional, default='grey'",
+    "borderRadius": "string, optional, default='10px'",
+    "borderWidth": "string, optional",
+    "borderColor": "string, optional",
+    "boxShadowColor": "string, optional, default='grey'",
+    "color": "string, optional, default='white'",
+    "fontSize": "string, optional, default='1.2em'",
+    "hoverBgColor": "string, optional",
+    "transformScale": "number, optional, default=1.1",
+    "transitionTime": "string, optional, default='0.3s'",
+    "onClick": "function, optional, default=console.log('Button clicked!')",
+    "example": "<SimpleButton1\n  label='Submit'\n  width='150px'\n height='40px'\n bgColor='#4CAF50'\n borderRadius='5px'\n  borderWidth='2px'\n borderColor='#4CAF50'\n boxShadowColor='#888888'\n  color='white'\n fontSize='1em'\n  hoverBgColor='#45a049'\n  transformScale={1.05}\n transitionTime='0.2s'\n onClick={() => alert('Button clicked!')}\n  />"
+  },
+
+  "SimpleSmallPopUp": {
+    "description": "This component represents a small popup with customizable content and appearance.",
+    "info": "Supports display and customization of a small popup with optional auto-hide feature",
+    "label": "string, required",
+    "width": "string, optional, default='200px'",
+    "height": "string, optional, default='50px'",
+    "bgColor": "string, optional, default='grey'",
+    "borderRadius": "string, optional, default='1rem'",
+    "borderWidth": "string, optional",
+    "borderColor": "string, optional",
+    "color": "string, optional, default='white'",
+    "fontSize": "string, optional, default='1.2rem'",
+    "top": "string, optional, default='200px'",
+    "show": "boolean, optional, default=false",
+    "onClose": "function, required",
+    "stayTime": "number, optional, default=3000",
+    "example": "<SimpleSmallPopUp\n label='This is a PopUp!'\n show={showPopUp}\n onClose={() => setShowPopUp(false)}\n />"
   }
 }

@@ -1,0 +1,9 @@
+.mainDivSimpleSmallPopUp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+
+  transition: opacity 0.3s ease-in-out;
+}
