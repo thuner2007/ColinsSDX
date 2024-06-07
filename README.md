@@ -15,5 +15,8 @@ npm start
 
 When you want to use a component in your own project, you have to copy the component from the cloned repo and paste it in your project.
 
+## Documentation
+see the [documentation](https://www.colinwalker.ch/cwx-cdx) here.
+
 ## License
 CWX is licensed under the MIT License. See the [LICENSE](https://github.com/thuner2007/cdx/blob/main/LICENSE.md) file for more information.
