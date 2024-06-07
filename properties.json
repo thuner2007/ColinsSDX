@@ -76,7 +76,9 @@
     "hasError": "boolean, optional, default=false",
     "errorMessage": "string, optional",
     "overflow": "'auto' | 'hidden' | 'visible' | 'scroll' | 'inherit' | 'initial' | 'unset', optional, default='auto'",
+    "maxLength": "number, optional, default=1000",
     "onTextChange": "function, optional",
+    "labelAlign": "'start' | 'center' | 'end', optional, default='left'",
     "example": "<SimpleBigTextInputWithRequired showBorder width='90%' height='15rem' placeholder='Enter your text here...'\n label='Your Text' required errorMessage='This field is required.' />"
   },
   "SimpleInputWithRequired": {
@@ -91,7 +93,9 @@
     "required": "boolean, optional, default=false",
     "hasError": "boolean, optional, default=false",
     "errorMessage": "string, optional",
+    "maxLength": "number, optional, default=1000",
     "onTextChange": "function, optional",
+    "labelAlign": "'start' | 'center' | 'end', optional, default='left'",
     "example": "<SimpleInputWithRequired showBorder width='90%' placeholder='Enter your text here...' label='Your Text' required errorMessage='This field is required.' />"
   },
   "NavBarNormal1": {

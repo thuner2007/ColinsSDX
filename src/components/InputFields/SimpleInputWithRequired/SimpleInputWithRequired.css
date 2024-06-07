@@ -12,8 +12,8 @@
 }
 
 .mandatorySpanSimpleInputWithRequired {
-  position: relative;
   margin: 0;
+  justify-self: start;
 }
 
 .labelHeaderSimpleInputWithRequired {
@@ -21,6 +21,13 @@
   font-weight: bold;
 
   margin: 0;
+}
+
+#labelDivSimpleInputWithRequired {
+  display: flex;
+  margin-bottom: 0.2rem;
+
+  width: 100%;
 }
 
 .errorMessageSimpleInputWithRequired {

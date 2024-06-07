@@ -12,8 +12,8 @@
 }
 
 .mandatorySpanSimpleBigTextInputWithRequired {
-  position: relative;
   margin: 0;
+  justify-self: start;
 }
 
 .labelHeaderSimpleBigTextInputWithRequired {
@@ -21,6 +21,13 @@
   font-weight: bold;
 
   margin: 0;
+}
+
+#labelDivSimpleBigTextInputWithRequired {
+  display: flex;
+  margin-bottom: 0.2rem;
+
+  width: 100%;
 }
 
 .errorMessageSimpleBigTextInputWithRequired {

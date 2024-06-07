@@ -5,6 +5,7 @@ import NavBarWithComponents1 from './components/NavBars/NavBarWithComponents1/Na
 import HorizontalItemListDivWithBorder from './components/Divs/HorizontalItemListDivWithBorder/HorizontalItemListDivWithBorder.tsx';
 import VerticalItemListDivWithBorder from './components/Divs/VerticalItemListDivWithBorder/VerticalItemListDivWithBorder.tsx';
 import SimpleBigTextInputWithRequired from './components/InputFields/SimpleBigTextInputWithRequired/SimpleBigTextInputWithRequired.tsx';
+import SimpleInputWithRequired from './components/InputFields/SimpleInputWithRequired/SimpleInputWithRequired.tsx';
 function App() {
   const consoleLogHey = () => {
     console.log('Hey!');
@@ -78,9 +79,19 @@ function App() {
       </VerticalItemListDivWithBorder>
       <h1>TEST</h1>
       <h1>TEST</h1>
+      <SimpleInputWithRequired
+        label="test"
+        required={true}
+        labelAlign="center"
+      />
       <h1>TEST</h1>
       <h1>TEST</h1>
-      <SimpleBigTextInputWithRequired label="test2" overflow="hidden" />
+      <SimpleBigTextInputWithRequired
+        label="test2"
+        overflow="hidden"
+        maxLength={20}
+        placeholder="maxLength is 20!"
+      />
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>

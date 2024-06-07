@@ -11,6 +11,8 @@ interface SimpleInputWithRequiredProps {
   required?: boolean;
   hasError?: boolean;
   errorMessage?: string;
+  maxLength?: number;
+  labelAlign?: 'start' | 'center' | 'end';
   onTextChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -24,6 +26,8 @@ const SimpleInputWithRequired: React.FC<SimpleInputWithRequiredProps> = ({
   borderRadius,
   hasError,
   errorMessage,
+  maxLength,
+  labelAlign,
   onTextChange,
 }) => {
   const getRandomColor = () => {
@@ -40,14 +44,24 @@ const SimpleInputWithRequired: React.FC<SimpleInputWithRequiredProps> = ({
       className="mainDivSimpleInputWithRequired"
       style={{ border: showBorder ? `2px solid ${randomBorderColor}` : 'none' }}
     >
-      {label && (
-        <h2
-          className="labelHeaderSimpleInputWithRequired"
-          style={{ marginLeft: required ? '0.5rem' : '0' }}
-        >
-          {label}
-        </h2>
-      )}
+      <div
+        id="labelDivSimpleInputWithRequired"
+        style={{ justifyContent: labelAlign ? labelAlign : 'start' }}
+      >
+        {required && (
+          <span
+            className="mandatorySpanSimpleInputWithRequired"
+            style={{
+              color: hasError ? 'red' : 'black',
+            }}
+          >
+            *
+          </span>
+        )}
+        {label && (
+          <h2 className="labelHeaderSimpleInputWithRequired">{label}</h2>
+        )}
+      </div>
 
       <input
         className="inputSimpleInputWithRequired"
@@ -58,19 +72,8 @@ const SimpleInputWithRequired: React.FC<SimpleInputWithRequiredProps> = ({
         }}
         placeholder={placeholder ? placeholder : 'Type here...'}
         onChange={onTextChange}
+        maxLength={maxLength ? maxLength : 1000}
       />
-      {required && (
-        <span
-          className="mandatorySpanSimpleInputWithRequired"
-          style={{
-            bottom: label ? '4rem' : '2.2rem',
-            right: label ? '0rem' : '-0.6rem',
-            color: hasError ? 'red' : 'black',
-          }}
-        >
-          *
-        </span>
-      )}
       <p
         className={
           required

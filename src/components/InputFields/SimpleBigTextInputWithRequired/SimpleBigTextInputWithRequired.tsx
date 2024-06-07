@@ -12,6 +12,8 @@ interface SimpleBigTextInputWithRequiredProps {
   required?: boolean;
   hasError?: boolean;
   errorMessage?: string;
+  maxLength?: number;
+  labelAlign?: 'start' | 'center' | 'end';
   overflow?:
     | 'auto'
     | 'hidden'
@@ -37,6 +39,8 @@ const SimpleBigTextInputWithRequired: React.FC<
   hasError,
   errorMessage,
   overflow,
+  maxLength,
+  labelAlign,
   onTextChange,
 }) => {
   const getRandomColor = () => {
@@ -53,14 +57,24 @@ const SimpleBigTextInputWithRequired: React.FC<
       className="mainDivSimpleBigTextInputWithRequired"
       style={{ border: showBorder ? `2px solid ${randomBorderColor}` : 'none' }}
     >
-      {label && (
-        <h2
-          className="labelHeaderSimpleBigTextInputWithRequired"
-          style={{ marginLeft: required ? '0.5rem' : '0' }}
-        >
-          {label}
-        </h2>
-      )}
+      <div
+        id="labelDivSimpleBigTextInputWithRequired"
+        style={{ justifyContent: labelAlign ? labelAlign : 'start' }}
+      >
+        {required && (
+          <span
+            className="mandatorySpanSimpleBigTextInputWithRequired"
+            style={{
+              color: hasError ? 'red' : 'black',
+            }}
+          >
+            *
+          </span>
+        )}
+        {label && (
+          <h2 className="labelHeaderSimpleBigTextInputWithRequired">{label}</h2>
+        )}
+      </div>
 
       <textarea
         className="inputSimpleBigTextInputWithRequired"
@@ -73,19 +87,8 @@ const SimpleBigTextInputWithRequired: React.FC<
         }}
         placeholder={placeholder ? placeholder : 'Type here...'}
         onChange={onTextChange}
+        maxLength={maxLength ? maxLength : 1000}
       />
-      {required && (
-        <span
-          className="mandatorySpanSimpleBigTextInputWithRequired"
-          style={{
-            bottom: label ? '4rem' : '2.2rem',
-            right: label ? '0rem' : '-0.6rem',
-            color: hasError ? 'red' : 'black',
-          }}
-        >
-          *
-        </span>
-      )}
       <p
         className={
           required
