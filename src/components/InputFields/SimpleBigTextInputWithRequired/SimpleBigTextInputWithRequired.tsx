@@ -89,13 +89,7 @@ const SimpleBigTextInputWithRequired: React.FC<
         onChange={onTextChange}
         maxLength={maxLength ? maxLength : 1000}
       />
-      <p
-        className={
-          required
-            ? 'errorMessageSimpleBigTextInputWithRequired'
-            : 'errorMessageSimpleBigTextInputWithRequired2'
-        }
-      >
+      <p className="errorMessageSimpleBigTextInputWithRequired">
         {errorMessage}
       </p>
     </div>

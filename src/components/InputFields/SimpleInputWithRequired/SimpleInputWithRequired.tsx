@@ -74,15 +74,7 @@ const SimpleInputWithRequired: React.FC<SimpleInputWithRequiredProps> = ({
         onChange={onTextChange}
         maxLength={maxLength ? maxLength : 1000}
       />
-      <p
-        className={
-          required
-            ? 'errorMessageSimpleInputWithRequired'
-            : 'errorMessageSimpleInputWithRequired2'
-        }
-      >
-        {errorMessage}
-      </p>
+      <p className="errorMessageSimpleInputWithRequired">{errorMessage}</p>
     </div>
   );
 };

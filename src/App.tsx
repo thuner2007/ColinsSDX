@@ -83,6 +83,7 @@ function App() {
         label="test"
         required={true}
         labelAlign="center"
+        errorMessage="error test"
       />
       <h1>TEST</h1>
       <h1>TEST</h1>
@@ -91,6 +92,8 @@ function App() {
         overflow="hidden"
         maxLength={20}
         placeholder="maxLength is 20!"
+        required={true}
+        errorMessage="error test"
       />
       <h1>TEST</h1>
       <h1>TEST</h1>
