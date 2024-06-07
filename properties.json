@@ -53,7 +53,7 @@
     "unicode-arrow-up": "string, optional, default='\\u2B9D'",
     "unicode-arrow-down": "string, optional, default='\\u2B9F'",
     "items": "array of objects with properties: alt (string), label (string), onclick (function), optional",
-    "example": "<SimpleVerticalDropdown label='Dropdown'><div>Item 1</div><div>Item 2</div><div>Item 3</div></SimpleVerticalDropdown>"
+    "example": ""
   },
   "UploadFileWithPreview": {
     "description": "This component allows users to upload a file and preview its text content. It supports optional border display and resizable text area.",

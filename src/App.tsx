@@ -70,7 +70,7 @@ function App() {
         label="Test"
         onClose={() => setShow(false)}
         show={show}
-        stayTime={30000}
+        stayTime={3000}
         borderColor="yellow"
         borderWidth="10px"
       />
