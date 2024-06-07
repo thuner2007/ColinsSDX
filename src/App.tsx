@@ -90,6 +90,7 @@ function App() {
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
+      <SimpleBigTextInputWithRequired label="Test" />
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>

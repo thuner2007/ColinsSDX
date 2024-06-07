@@ -10,6 +10,9 @@ interface Item {
 interface SimpleVerticalDropdownProps {
   showBorder?: boolean;
   label: string;
+  bgColor?: string;
+  color?: string;
+  fontSize?: string;
   borderRadius?: string;
   unicodeArrowUp?: string;
   unicodeArrowDown?: string;
@@ -23,6 +26,9 @@ const SimpleVerticalDropdown: React.FC<SimpleVerticalDropdownProps> = ({
   unicodeArrowUp,
   unicodeArrowDown,
   items,
+  bgColor,
+  color,
+  fontSize,
 }) => {
   const [isDropped, setIsDropped] = useState(false);
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
@@ -61,13 +67,21 @@ const SimpleVerticalDropdown: React.FC<SimpleVerticalDropdownProps> = ({
     >
       <button
         className="buttonSimpleVerticalDropdown"
-        style={{ borderRadius: borderRadius ?? '1rem' }}
+        style={{
+          borderRadius: borderRadius ?? '10px',
+          backgroundColor: bgColor ? bgColor : '#7553BB',
+          color: color ? color : 'white',
+          fontSize: fontSize ? fontSize : '1rem',
+        }}
         onClick={() => setIsDropped(!isDropped)}
         onBlur={handleBlur}
         onFocus={handleFocus}
       >
         {label}{' '}
-        <p id="droppedArrowsSimpleVerticalDropdown">
+        <p
+          id="droppedArrowsSimpleVerticalDropdown"
+          style={{ color: color ? color : 'white' }}
+        >
           {isDropped
             ? unicodeArrowUp
               ? String.fromCodePoint(parseInt(unicodeArrowUp ?? '', 16))
@@ -84,7 +98,7 @@ const SimpleVerticalDropdown: React.FC<SimpleVerticalDropdownProps> = ({
             position: 'absolute',
             top: 'calc(100% + 1rem)',
             left: 0,
-            borderRadius: borderRadius ? borderRadius : '1rem',
+            borderRadius: borderRadius ? borderRadius : '10px',
           }}
         >
           {items &&
@@ -93,6 +107,11 @@ const SimpleVerticalDropdown: React.FC<SimpleVerticalDropdownProps> = ({
                 <button
                   className="buttonOptionSimpleVerticalDropdown"
                   onClick={item.onclick ? item.onclick : () => {}}
+                  style={{
+                    backgroundColor: bgColor ? bgColor : '#7553BB',
+                    color: color ? color : 'white',
+                    fontSize: fontSize ? fontSize : '1rem',
+                  }}
                 >
                   {item.label ? item.label : 'Option ' + index}
                 </button>

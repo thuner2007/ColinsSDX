@@ -7,6 +7,8 @@
     "gap": "string, optional, default=1rem",
     "justify-content": "'flex-start'| 'flex-end'| 'center'| 'space-between'| 'space-around'| 'space-evenly', optional, default=center",
     "align-items": "'flex-start'| 'flex-end'| 'center'| 'baseline'| 'stretch', optional, default=center",
+    "width": "string, optional, default=auto",
+    "height": "string, optional, default=auto",
     "example": "<HorizontalItemListDiv showBorder>\n  <div>Item 1</div>\n  <div>Item 2</div>\n  <div>Item 3</div>\n</HorizontalItemListDiv>"
   },
   "HorizontalItemListDivWithBorder": {
@@ -20,6 +22,8 @@
     "borderColor": "string, optional, default=black",
     "borderWidth": "string, optional, default=2px",
     "borderRadius": "string, optional, default=10px",
+    "width": "string, optional, default=auto",
+    "height": "string, optional, default=auto",
     "example": "<HorizontalItemListDivWithBorder>\n  <div>Item 1</div>\n  <div>Item 2</div>\n  <div>Item 3</div>\n</HorizontalItemListDivWithBorder>"
   },
   "VerticalItemListDiv": {
@@ -28,6 +32,8 @@
     "margin": "string, optional, default=0",
     "padding": "string, optional, default=1rem",
     "gap": "string, optional, default=1rem",
+    "width": "string, optional, default=auto",
+    "height": "string, optional, default=auto",
     "justify-content": "'flex-start'| 'flex-end'| 'center'| 'space-between'| 'space-around'| 'space-evenly', optional, default=center",
     "align-items": "'flex-start'| 'flex-end'| 'center'| 'baseline'| 'stretch', optional, default=center",
     "example": "<VerticalItemListDiv showBorder>\n  <div>Item 1</div>\n  <div>Item 2</div>\n  <div>Item 3</div>\n</VerticalItemListDiv>"
@@ -43,16 +49,21 @@
     "border-width": "string, optional, default=2px",
     "border-color": "string, optional, default=grey",
     "border-radius": "string, optional, default=10px",
+    "width": "string, optional, default=auto",
+    "height": "string, optional, default=auto",
     "example": "<VerticalItemListDivWithBorder>\n  <div>Item 1</div>\n  <div>Item 2</div>\n  <div>Item 3</div>\n</VerticalItemListDivWithBorder>"
   },
   "SimpleVerticalDropdown": {
     "description": "This is a simple vertical dropdown component. It displays a list of items when clicked, with customizable border and arrow icons.",
     "info": "Supports children, Supports showBorder",
     "label": "string, required",
-    "border-radius": "string, optional, default=1rem",
+    "border-radius": "string, optional, default=10px",
     "unicode-arrow-up": "string, optional, default='\\u2B9D'",
     "unicode-arrow-down": "string, optional, default='\\u2B9F'",
     "items": "array of objects with properties: alt (string), label (string), onclick (function), optional",
+    "bgColor": "string, optional, default=7553BB",
+    "fontSize": "string, optional, default=1rem",
+    "color": "string, optional, default='white'",
     "example": ""
   },
   "UploadFileWithPreview": {
@@ -79,6 +90,8 @@
     "maxLength": "number, optional, default=1000",
     "onTextChange": "function, optional",
     "labelAlign": "'start' | 'center' | 'end', optional, default='left'",
+    "bgColor": "string, optional, default='RGBA(117, 83, 187, 0.3)'",
+    "color":"string, optional, default='black'",
     "example": "<SimpleBigTextInputWithRequired showBorder width='90%' height='15rem' placeholder='Enter your text here...'\n label='Your Text' required errorMessage='This field is required.' />"
   },
   "SimpleInputWithRequired": {
@@ -146,11 +159,11 @@
     "label": "string, optional, default='Click me!'",
     "width": "string, optional, default='200px'",
     "height": "string, optional, default='50px'",
-    "bgColor": "string, optional, default='grey'",
+    "bgColor": "string, optional, default='#7553BB'",
     "borderRadius": "string, optional, default='10px'",
     "borderWidth": "string, optional",
     "borderColor": "string, optional",
-    "boxShadowColor": "string, optional, default='grey'",
+    "boxShadowColor": "string, optional, default='#7553BB'",
     "color": "string, optional, default='white'",
     "fontSize": "string, optional, default='1.2em'",
     "hoverBgColor": "string, optional",

@@ -17,6 +17,8 @@ interface HorizontalItemListDivWithBorderProps {
   borderColor?: string;
   borderWidth?: string;
   borderRadius?: string;
+  height?: string;
+  width?: string;
 }
 
 const HorizontalItemListDivWithBorder: React.FC<
@@ -31,6 +33,8 @@ const HorizontalItemListDivWithBorder: React.FC<
   borderColor,
   borderWidth,
   borderRadius,
+  height,
+  width,
 }) => {
   return (
     <div
@@ -47,6 +51,8 @@ const HorizontalItemListDivWithBorder: React.FC<
         gap: gap ? gap : '1rem',
         alignItems: alignItems ? alignItems : 'center',
         justifyContent: justifyContent ? justifyContent : 'center',
+        height: height ? height : 'auto',
+        width: width ? width : 'auto',
       }}
     >
       {children}

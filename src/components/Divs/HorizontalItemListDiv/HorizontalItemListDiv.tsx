@@ -5,6 +5,8 @@ interface HorizontalItemListDivProps {
   showBorder?: boolean;
   children?: React.ReactNode;
   margin?: string;
+  width?: string;
+  height?: string;
   padding?: string;
   gap?: string;
   justifyContent?:
@@ -25,6 +27,8 @@ const HorizontalItemListDiv: React.FC<HorizontalItemListDivProps> = ({
   gap,
   alignItems,
   justifyContent,
+  height,
+  width,
 }) => {
   const getRandomColor = () => {
     const letters = '0123456789ABCDEF';
@@ -45,6 +49,8 @@ const HorizontalItemListDiv: React.FC<HorizontalItemListDivProps> = ({
         gap: gap ? gap : '1rem',
         alignItems: alignItems ? alignItems : 'center',
         justifyContent: justifyContent ? justifyContent : 'center',
+        height: height ? height : 'auto',
+        width: width ? width : 'auto',
       }}
     >
       {children}

@@ -6,6 +6,8 @@ interface VerticalItemListDivProps {
   children?: React.ReactNode;
   margin?: string;
   padding?: string;
+  width?: string;
+  height?: string;
   gap?: string;
   justifyContent?:
     | 'flex-start'
@@ -25,6 +27,8 @@ const VerticalItemListDiv: React.FC<VerticalItemListDivProps> = ({
   gap,
   alignItems,
   justifyContent,
+  width,
+  height,
 }) => {
   const getRandomColor = () => {
     const letters = '0123456789ABCDEF';
@@ -45,6 +49,8 @@ const VerticalItemListDiv: React.FC<VerticalItemListDivProps> = ({
         gap: gap ? gap : '1rem',
         alignItems: alignItems ? alignItems : 'center',
         justifyContent: justifyContent ? justifyContent : 'center',
+        height: height ? height : 'auto',
+        width: width ? width : 'auto',
       }}
     >
       {children}

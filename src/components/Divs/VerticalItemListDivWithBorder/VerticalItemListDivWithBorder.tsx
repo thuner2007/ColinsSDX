@@ -6,6 +6,8 @@ interface VerticalItemListDivWithBorderProps {
   margin?: string;
   padding?: string;
   gap?: string;
+  width?: string;
+  height?: string;
   justifyContent?:
     | 'flex-start'
     | 'flex-end'
@@ -31,6 +33,8 @@ const VerticalItemListDivWithBorder: React.FC<
   borderWidth,
   borderColor,
   borderRadius,
+  width,
+  height,
 }) => {
   return (
     <div
@@ -47,6 +51,8 @@ const VerticalItemListDivWithBorder: React.FC<
         gap: gap ? gap : '1rem',
         alignItems: alignItems ? alignItems : 'center',
         justifyContent: justifyContent ? justifyContent : 'center',
+        height: height ? height : 'auto',
+        width: width ? width : 'auto',
       }}
     >
       {children}

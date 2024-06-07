@@ -13,6 +13,8 @@ interface SimpleBigTextInputWithRequiredProps {
   hasError?: boolean;
   errorMessage?: string;
   maxLength?: number;
+  bgColor?: string;
+  color?: string;
   labelAlign?: 'start' | 'center' | 'end';
   overflow?:
     | 'auto'
@@ -41,6 +43,8 @@ const SimpleBigTextInputWithRequired: React.FC<
   overflow,
   maxLength,
   labelAlign,
+  bgColor,
+  color,
   onTextChange,
 }) => {
   const getRandomColor = () => {
@@ -72,7 +76,12 @@ const SimpleBigTextInputWithRequired: React.FC<
           </span>
         )}
         {label && (
-          <h2 className="labelHeaderSimpleBigTextInputWithRequired">{label}</h2>
+          <h2
+            className="labelHeaderSimpleBigTextInputWithRequired"
+            style={{ color: color ? color : 'black' }}
+          >
+            {label}
+          </h2>
         )}
       </div>
 
@@ -84,6 +93,8 @@ const SimpleBigTextInputWithRequired: React.FC<
           height: height ? height : '10rem',
           fontSize: fontSize ? fontSize : '1rem',
           overflow: overflow ? overflow : 'auto',
+          backgroundColor: bgColor ? bgColor : 'RGBA(117, 83, 187, 0.3)',
+          color: color ? color : 'black',
         }}
         placeholder={placeholder ? placeholder : 'Type here...'}
         onChange={onTextChange}
