@@ -37,10 +37,10 @@ const HorizontalItemListDivWithBorder: React.FC<
       className="mainDivHorizontalItemListDivWithBorder"
       style={{
         border: borderWidth
-          ? `${borderWidth} solid ${borderColor || 'grey'}`
+          ? `${borderWidth} solid ${borderColor || 'black'}`
           : borderColor
           ? `2px solid ${borderColor}`
-          : '2px solid grey',
+          : '2px solid black',
         borderRadius: borderRadius ? borderRadius : '10px',
         margin: margin ? margin : '1rem',
         padding: padding ? padding : '1rem',
