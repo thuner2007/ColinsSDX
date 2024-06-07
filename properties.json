@@ -77,7 +77,7 @@
     "errorMessage": "string, optional",
     "overflow": "'auto' | 'hidden' | 'visible' | 'scroll' | 'inherit' | 'initial' | 'unset', optional, default='auto'",
     "onTextChange": "function, optional",
-    "example": "<SimpleBigTextInputWithRequired showBorder width='90%' height='15rem' placeholder='Enter your text here...' label='Your Text' required errorMessage='This field is required.' />"
+    "example": "<SimpleBigTextInputWithRequired showBorder width='90%' height='15rem' placeholder='Enter your text here...'\n label='Your Text' required errorMessage='This field is required.' />"
   },
   "SimpleInputWithRequired": {
     "description": "This component is a simple input field with various customization options. It supports optional borders, custom width, font size, and error handling.",
