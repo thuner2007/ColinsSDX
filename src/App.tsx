@@ -6,6 +6,7 @@ import HorizontalItemListDivWithBorder from './components/Divs/HorizontalItemLis
 import VerticalItemListDivWithBorder from './components/Divs/VerticalItemListDivWithBorder/VerticalItemListDivWithBorder.tsx';
 import SimpleBigTextInputWithRequired from './components/InputFields/SimpleBigTextInputWithRequired/SimpleBigTextInputWithRequired.tsx';
 import SimpleInputWithRequired from './components/InputFields/SimpleInputWithRequired/SimpleInputWithRequired.tsx';
+import SimpleButton1 from './components/Buttons/SimpleButton1/SimpleButton1.tsx';
 function App() {
   const consoleLogHey = () => {
     console.log('Hey!');
@@ -42,7 +43,7 @@ function App() {
       /> */}
       <NavBarWithComponents1
         bgBlur="4px"
-        bgColor="rgba(153, 153, 255, 0.3)"
+        bgColor="rgba(102, 102, 153, 0.3)"
         height={'10vh'}
         calcScrollBar={true}
       >
@@ -68,33 +69,18 @@ function App() {
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
-      <HorizontalItemListDivWithBorder>
-        <SimpleVerticalDropdown label="Test" />
-        <SimpleVerticalDropdown label="Test" />
-      </HorizontalItemListDivWithBorder>
-      <VerticalItemListDivWithBorder>
-        {' '}
-        <SimpleVerticalDropdown label="Test" />
-        <SimpleVerticalDropdown label="Test" />
-      </VerticalItemListDivWithBorder>
+      <SimpleButton1 onClick={consoleLogHey} />
       <h1>TEST</h1>
       <h1>TEST</h1>
-      <SimpleInputWithRequired
-        label="test"
-        required={true}
-        labelAlign="center"
-        errorMessage="error test"
-      />
       <h1>TEST</h1>
       <h1>TEST</h1>
-      <SimpleBigTextInputWithRequired
-        label="test2"
-        overflow="hidden"
-        maxLength={20}
-        placeholder="maxLength is 20!"
-        required={true}
-        errorMessage="error test"
-      />
+      <h1>TEST</h1>
+      <h1>TEST</h1>
+      <h1>TEST</h1>
+      <h1>TEST</h1>
+      <h1>TEST</h1>
+      <h1>TEST</h1>
+      <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>

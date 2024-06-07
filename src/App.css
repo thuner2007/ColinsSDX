@@ -1,6 +1,6 @@
 .App {
   width: calc(100vw - 15px);
-  height: 100vh;
+  height: fit-content;
 
   display: flex;
   justify-content: center;
