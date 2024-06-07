@@ -1,13 +1,6 @@
 import React from 'react';
 import './NavBarWithComponents1.css';
 
-interface Item {
-  src: string;
-  alt?: string;
-  hover?: boolean;
-  onclick?: () => void;
-}
-
 type JustifyContentOptions = 'center' | 'space-between';
 
 interface NavBarWithComponents1Props {
