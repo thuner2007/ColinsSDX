@@ -17,6 +17,7 @@ interface SimpleVerticalDropdownProps {
   unicodeArrowUp?: string;
   unicodeArrowDown?: string;
   boxShadowColor?: string;
+  bgColor?: string;
   items?: Item[];
 }
 
