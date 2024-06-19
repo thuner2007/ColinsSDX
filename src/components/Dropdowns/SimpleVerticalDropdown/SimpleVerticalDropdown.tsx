@@ -17,6 +17,7 @@ interface SimpleVerticalDropdownProps {
   unicodeArrowUp?: string;
   unicodeArrowDown?: string;
   boxShadowColor?: string;
+  boxShadow?: boolean;
   bgColor?: string;
   items?: Item[];
 }
@@ -32,6 +33,7 @@ const SimpleVerticalDropdown: React.FC<SimpleVerticalDropdownProps> = ({
   color,
   fontSize,
   boxShadowColor,
+  boxShadow,
 }) => {
   const [isDropped, setIsDropped] = useState(false);
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
@@ -75,7 +77,7 @@ const SimpleVerticalDropdown: React.FC<SimpleVerticalDropdownProps> = ({
           backgroundColor: bgColor ? bgColor : '#7553BB',
           color: color ? color : 'white',
           fontSize: fontSize ? fontSize : '1rem',
-          boxShadow: `0px 0px 10px 1px ${boxShadowColor || '#7553BB'}`,
+          boxShadow: boxShadow ? `0px 0px 10px 1px ${boxShadowColor || '#7553BB'}` : 'none',
         }}
         onClick={() => setIsDropped(!isDropped)}
         onBlur={handleBlur}
@@ -103,7 +105,7 @@ const SimpleVerticalDropdown: React.FC<SimpleVerticalDropdownProps> = ({
             top: 'calc(100% + 1rem)',
             left: 0,
             borderRadius: borderRadius ? borderRadius : '10px',
-            boxShadow: `0px 0px 10px 1px ${boxShadowColor || '#7553BB'}`,
+            boxShadow: boxShadow ? `0px 0px 10px 1px ${boxShadowColor || '#7553BB'}` : 'none',
           }}
         >
           {items &&

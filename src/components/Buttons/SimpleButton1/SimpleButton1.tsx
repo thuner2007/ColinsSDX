@@ -10,6 +10,7 @@ interface SimpleButton1Props {
   borderWidth?: string;
   borderColor?: string;
   boxShadowColor?: string;
+  boxShadow?: boolean;
   color?: string;
   fontSize?: string;
   hoverBgColor?: string;
@@ -32,6 +33,7 @@ const SimpleButton1: React.FC<SimpleButton1Props> = ({
   transformScale,
   transitionTime,
   fontSize,
+  boxShadow,
   onClick,
 }) => {
   return (
@@ -49,7 +51,7 @@ const SimpleButton1: React.FC<SimpleButton1Props> = ({
           height: height ? height : '50px',
           backgroundColor: bgColor ? bgColor : '#7553BB',
           color: color ? color : 'white',
-          boxShadow: `0px 0px 10px 1px ${boxShadowColor || '#7553BB'}`,
+          boxShadow: boxShadow ? `0px 0px 10px 1px ${boxShadowColor || '#7553BB'}` : 'none',
           transition: `all ${transitionTime || '0.3s'} ease`,
           fontSize: fontSize ? fontSize : '1.2em',
         }}
