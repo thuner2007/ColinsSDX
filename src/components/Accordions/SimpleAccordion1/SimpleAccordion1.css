@@ -25,11 +25,5 @@
 }
 
 .textSimpleAccordion1 {
-  max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
-}
-
-.textSimpleAccordion1.expanded {
-  max-height: 100px;
 }
