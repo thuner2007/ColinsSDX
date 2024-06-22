@@ -1,5 +1,5 @@
-import React from 'react';
-import './HorizontalItemListDivWithBorder.css';
+import React from "react";
+import "./HorizontalItemListDivWithBorder.css";
 
 interface HorizontalItemListDivWithBorderProps {
   children?: React.ReactNode;
@@ -7,13 +7,13 @@ interface HorizontalItemListDivWithBorderProps {
   padding?: string;
   gap?: string;
   justifyContent?:
-    | 'flex-start'
-    | 'flex-end'
-    | 'center'
-    | 'space-between'
-    | 'space-around'
-    | 'space-evenly';
-  alignItems?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
+    | "flex-start"
+    | "flex-end"
+    | "center"
+    | "space-between"
+    | "space-around"
+    | "space-evenly";
+  alignItems?: "flex-start" | "flex-end" | "center" | "stretch" | "baseline";
   borderColor?: string;
   borderWidth?: string;
   borderRadius?: string;
@@ -41,18 +41,18 @@ const HorizontalItemListDivWithBorder: React.FC<
       className="mainDivHorizontalItemListDivWithBorder"
       style={{
         border: borderWidth
-          ? `${borderWidth} solid ${borderColor || 'black'}`
+          ? `${borderWidth} solid ${borderColor || "black"}`
           : borderColor
           ? `2px solid ${borderColor}`
-          : '2px solid black',
-        borderRadius: borderRadius ? borderRadius : '10px',
-        margin: margin ? margin : '1rem',
-        padding: padding ? padding : '1rem',
-        gap: gap ? gap : '1rem',
-        alignItems: alignItems ? alignItems : 'center',
-        justifyContent: justifyContent ? justifyContent : 'center',
-        height: height ? height : 'auto',
-        width: width ? width : 'auto',
+          : "2px solid black",
+        borderRadius: borderRadius || "10px",
+        margin: margin || "1rem",
+        padding: padding || "1rem",
+        gap: gap || "1rem",
+        alignItems: alignItems || "center",
+        justifyContent: justifyContent || "center",
+        height: height || "auto",
+        width: width || "auto",
       }}
     >
       {children}

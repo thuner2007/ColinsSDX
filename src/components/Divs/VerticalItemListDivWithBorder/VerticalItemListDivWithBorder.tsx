@@ -1,5 +1,5 @@
-import React from 'react';
-import './VerticalItemListDivWithBorder.css';
+import React from "react";
+import "./VerticalItemListDivWithBorder.css";
 
 interface VerticalItemListDivWithBorderProps {
   children?: React.ReactNode;
@@ -9,13 +9,13 @@ interface VerticalItemListDivWithBorderProps {
   width?: string;
   height?: string;
   justifyContent?:
-    | 'flex-start'
-    | 'flex-end'
-    | 'center'
-    | 'space-between'
-    | 'space-around'
-    | 'space-evenly';
-  alignItems?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
+    | "flex-start"
+    | "flex-end"
+    | "center"
+    | "space-between"
+    | "space-around"
+    | "space-evenly";
+  alignItems?: "flex-start" | "flex-end" | "center" | "stretch" | "baseline";
   borderWidth?: string;
   borderColor?: string;
   borderRadius?: string;
@@ -41,18 +41,18 @@ const VerticalItemListDivWithBorder: React.FC<
       className="mainDivVerticalItemListDivWithBorder"
       style={{
         border: borderWidth
-          ? `${borderWidth} solid ${borderColor || 'grey'}`
+          ? `${borderWidth} solid ${borderColor || "grey"}`
           : borderColor
           ? `2px solid ${borderColor}`
-          : '2px solid grey',
-        borderRadius: borderRadius ? borderRadius : '10px',
-        margin: margin ? margin : '1rem',
-        padding: padding ? padding : '1rem',
-        gap: gap ? gap : '1rem',
-        alignItems: alignItems ? alignItems : 'center',
-        justifyContent: justifyContent ? justifyContent : 'center',
-        height: height ? height : 'auto',
-        width: width ? width : 'auto',
+          : "2px solid grey",
+        borderRadius: borderRadius || "10px",
+        margin: margin || "1rem",
+        padding: padding || "1rem",
+        gap: gap || "1rem",
+        alignItems: alignItems || "center",
+        justifyContent: justifyContent || "center",
+        height: height || "auto",
+        width: width || "auto",
       }}
     >
       {children}
