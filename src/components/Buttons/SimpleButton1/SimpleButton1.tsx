@@ -1,5 +1,5 @@
-import React from 'react';
-import './SimpleButton1.css';
+import React from "react";
+import "./SimpleButton1.css";
 
 interface SimpleButton1Props {
   label?: string;
@@ -9,14 +9,14 @@ interface SimpleButton1Props {
   borderRadius?: string;
   borderWidth?: string;
   borderColor?: string;
-  boxShadowColor?: string;
-  boxShadow?: boolean;
+  boxShadow?: string;
   color?: string;
   fontSize?: string;
   hoverBgColor?: string;
   transformScale?: number;
   transitionTime?: string;
   onClick?: () => void;
+  willChange?: boolean;
 }
 
 const SimpleButton1: React.FC<SimpleButton1Props> = ({
@@ -29,11 +29,11 @@ const SimpleButton1: React.FC<SimpleButton1Props> = ({
   borderRadius,
   hoverBgColor,
   color,
-  boxShadowColor,
   transformScale,
   transitionTime,
   fontSize,
   boxShadow,
+  willChange,
   onClick,
 }) => {
   return (
@@ -41,28 +41,29 @@ const SimpleButton1: React.FC<SimpleButton1Props> = ({
       <button
         className="mainSimpleButton1"
         style={{
+          willChange: willChange ? "transform" : "auto",
           border: borderWidth
-            ? `${borderWidth} solid ${borderColor || '#7553BB'}`
+            ? `${borderWidth} solid ${borderColor || "#7553BB"}`
             : borderColor
             ? `2px solid ${borderColor}`
-            : '2px solid #7553BB',
-          borderRadius: borderRadius ? borderRadius : '10px',
-          width: width ? width : '200px',
-          height: height ? height : '50px',
-          backgroundColor: bgColor ? bgColor : '#7553BB',
-          color: color ? color : 'white',
-          boxShadow: boxShadow ? `0px 0px 10px 1px ${boxShadowColor || '#7553BB'}` : 'none',
-          transition: `all ${transitionTime || '0.3s'} ease`,
-          fontSize: fontSize ? fontSize : '1.2em',
+            : "2px solid #7553BB",
+          borderRadius: borderRadius || "1rem",
+          width: width || "200px",
+          height: height || "50px",
+          backgroundColor: bgColor || "#7553BB",
+          color: color || "white",
+          boxShadow: boxShadow || "none",
+          transition: `all ${transitionTime || "0.3s"} ease`,
+          fontSize: fontSize ? fontSize : "1.5rem",
         }}
-        onClick={onClick ? onClick : () => console.log('Button clicked!')}
+        onClick={onClick ? onClick : () => console.log("Button clicked!")}
         onMouseEnter={(e) => {
-          e.currentTarget.style.transform = `scale(${transformScale || 1.1})`;
-          e.currentTarget.style.backgroundColor = hoverBgColor || '#7553BB';
+          e.currentTarget.style.transform = `scale(${transformScale || 1})`;
+          e.currentTarget.style.backgroundColor = hoverBgColor || "#7553BB";
         }}
-        onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+        onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
       >
-        {label ? label : 'Click me!'}
+        {label ? label : "Click me!"}
       </button>
     </>
   );

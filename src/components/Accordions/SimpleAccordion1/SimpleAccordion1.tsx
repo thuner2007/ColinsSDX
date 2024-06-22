@@ -18,6 +18,8 @@ interface SimpleAccordion1Props {
   padding?: string;
   alignItems?: "center" | "flex-start" | "flex-end" | "space-between";
   dynamicHeight?: boolean;
+  borderWidth?: string;
+  borderColor?: string;
 }
 
 const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
@@ -32,6 +34,8 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
   alignItems,
   items = [{ label: "Label", text: "Text" }],
   dynamicHeight,
+  borderWidth,
+  borderColor,
 }) => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const contentRefs = useRef<(HTMLParagraphElement | null)[]>([]);
@@ -74,6 +78,11 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
         borderRadius: borderRadius || "1rem",
         padding: padding || "0.5rem",
         margin: margin || "0",
+        border: borderWidth
+          ? `${borderWidth} solid ${borderColor || "#7553BB"}`
+          : borderColor
+          ? `2px solid ${borderColor}`
+          : "2px solid #7553BB",
       }}
     >
       {items?.map((item, index) => {
