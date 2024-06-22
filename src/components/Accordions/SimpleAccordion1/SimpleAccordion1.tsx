@@ -13,6 +13,8 @@ interface SimpleAccordion1Props {
   color?: string;
   borderRadius?: string;
   fontSize?: string;
+  margin?: string;
+  textWidth?: string;
   padding?: string;
   alignItems?: "center" | "flex-start" | "flex-end" | "space-between";
   dynamicHeight?: boolean;
@@ -24,9 +26,11 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
   color,
   borderRadius,
   fontSize,
+  margin,
+  textWidth,
   padding,
   alignItems,
-  items,
+  items = [{ label: "Label", text: "Text" }],
   dynamicHeight,
 }) => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
@@ -64,11 +68,12 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
     <div
       className="mainDivSimpleAccordion1"
       style={{
-        width: width ? width : "200px",
-        backgroundColor: bgColor ? bgColor : "#7553BB",
-        color: color ? color : "white",
-        borderRadius: borderRadius ? borderRadius : "1rem",
-        padding: padding ? padding : "1rem",
+        width: width || "200px",
+        backgroundColor: bgColor || "#7553BB",
+        color: color || "white",
+        borderRadius: borderRadius || "1rem",
+        padding: padding || "0.5rem",
+        margin: margin || "0",
       }}
     >
       {items?.map((item, index) => {
@@ -76,7 +81,10 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
           <div
             key={index}
             className="itemSimpleAccordion1"
-            style={{ alignItems: alignItems ? alignItems : "flex-start" }}
+            style={{
+              alignItems: alignItems || "flex-start",
+              width: textWidth || "90%",
+            }}
           >
             <h1
               onClick={() => {
@@ -96,7 +104,7 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
                       item.text?.length ?? 0
                     )} ease-in-out`
                   : `height 0.2s ease-in-out`,
-                fontSize: fontSize ? fontSize : "1rem",
+                fontSize: fontSize || "1rem",
               }}
               dangerouslySetInnerHTML={{ __html: item.text ?? "" }}
             />
