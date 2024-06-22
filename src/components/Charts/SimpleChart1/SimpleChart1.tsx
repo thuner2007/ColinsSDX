@@ -11,7 +11,8 @@ interface SimpleChart1Props {
   bgColor?: string;
   borderRadius?: string;
   color?: string;
-  fontSize?: string;
+  labelFontSize?: string;
+  textFontSize?: string;
   margin?: string;
   padding?: string;
   borderWidth?: string;
@@ -20,6 +21,7 @@ interface SimpleChart1Props {
   justifyContent?: "space-between" | "center" | "flex-start" | "flex-end";
   notReachedColor?: string;
   reachtedColor?: string;
+  gap?: string;
 }
 
 const SimpleChart1: React.FC<SimpleChart1Props> = ({
@@ -34,36 +36,43 @@ const SimpleChart1: React.FC<SimpleChart1Props> = ({
   borderColor,
   borderWidth,
   color,
-  fontSize,
+  labelFontSize,
+  textFontSize,
   margin,
   padding,
   alignItems,
   justifyContent,
   notReachedColor,
   reachtedColor,
+  gap,
 }) => {
   return (
     <div
       className="mainDivSimpleChart1"
       style={{
-        height: height ? height : "70px",
-        width: width ? width : "500px",
+        gap: gap || "1rem",
+        height: height || "auto",
+        width: width || "500px",
         border: borderWidth
-          ? `${borderWidth} solid ${borderColor || "none"}`
+          ? `${borderWidth} solid ${borderColor || "#7553BB"}`
           : borderColor
           ? `2px solid ${borderColor}`
-          : "2px solid none",
-        borderRadius: borderRadius ? borderRadius : "1rem",
-        backgroundColor: bgColor ? bgColor : "#7553BB",
-        color: color ? color : "white",
-        fontSize: fontSize ? fontSize : "1.2rem",
-        margin: margin ? margin : "0",
-        padding: padding ? padding : "0.8rem",
-        alignItems: alignItems ? alignItems : "center",
-        justifyContent: justifyContent ? justifyContent : "space-between",
+          : "2px solid #7553BB",
+        borderRadius: borderRadius || "1rem",
+        backgroundColor: bgColor || "#7553BB",
+        color: color || "white",
+        margin: margin || "0",
+        padding: padding || "0.8rem",
+        alignItems: alignItems || "center",
+        justifyContent: justifyContent || "space-between",
       }}
     >
-      <p className="labelSimpleChart1">{label ? label : "Label"}</p>
+      <p
+        style={{ fontSize: labelFontSize || "1.5rem" }}
+        className="labelSimpleChart1"
+      >
+        {label || "Label"}
+      </p>
       <div
         className="parentSliderDivSimpleChart1"
         style={{
@@ -80,7 +89,7 @@ const SimpleChart1: React.FC<SimpleChart1Props> = ({
           }}
         ></div>
       </div>
-      {text ? text : ""}
+      {text && <p className="textSimpleChart1">{text}</p>}
     </div>
   );
 };
