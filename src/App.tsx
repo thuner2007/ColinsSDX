@@ -9,6 +9,7 @@ import SimpleInputWithRequired from "./components/InputFields/SimpleInputWithReq
 import SimpleButton1 from "./components/Buttons/SimpleButton1/SimpleButton1.tsx";
 import SimpleSmallPopUp from "./components/PopUps/SimpleSmallPopUp/SimpleSmallPopUp.tsx";
 import SimpleAccordion1 from "./components/Accordions/SimpleAccordion1/SimpleAccordion1.tsx";
+import SimpleChart1 from "./components/Charts/SimpleChart1/SimpleChart1.tsx";
 function App() {
   const [show, setShow] = useState(false);
   const consoleLogHey = () => {
@@ -80,7 +81,8 @@ function App() {
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
-      <SimpleAccordion1
+      <SimpleChart1 percentage={34} label="Coolness" />
+      {/* <SimpleAccordion1
         dynamicHeight={true}
         items={[
           {
@@ -93,7 +95,7 @@ function App() {
             text: "lol, this is my long text hello <a href='https://www.google.ch'>test</a> world hallo test nico patrick colin nico benninger ivo krämer robin bärtschi lol, this is my long text hello world hallo test nico patrick colin nico benninger ivo krämer robin bärtschi lol, this is my long text hello world hallo test nico patrick colin nico benninger ivo krämer robin bärtschi lol, this is my long text hello world hallo test nico patrick colin nico benninger ivo krämer robin bärtschi",
           },
         ]}
-      />
+      /> */}
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
