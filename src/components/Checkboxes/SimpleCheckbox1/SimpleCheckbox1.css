@@ -35,16 +35,15 @@
 }
 
 .inputSimpleCheckbox1 {
-  text-align: center;
-
   display: flex;
   justify-content: center;
   align-items: center;
 
+  font-weight: bold;
+
   -webkit-appearance: initial;
   appearance: initial;
   border-radius: 0.2rem;
-  position: relative;
 
   margin: 0;
   padding: 0;

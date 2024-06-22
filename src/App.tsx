@@ -4,6 +4,7 @@ import "./App.css";
 import SimpleAccordion1 from "./components/Accordions/SimpleAccordion1/SimpleAccordion1.tsx";
 import SimpleButton1 from "./components/Buttons/SimpleButton1/SimpleButton1.tsx";
 import SimpleChart1 from "./components/Charts/SimpleChart1/SimpleChart1.tsx";
+import SimpleCheckbox1 from "./components/Checkboxes/SimpleCheckbox1/SimpleCheckbox1.tsx";
 function App() {
   const [show, setShow] = useState(false);
   const consoleLogHey = () => {
@@ -20,10 +21,10 @@ function App() {
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
-      <SimpleChart1
-        percentage={33}
-        text="Your coolness"
-        alignItems="flex-start"
+      <SimpleCheckbox1
+        alignItems="center"
+        label="this is my cool label"
+        text="see your text"
       />
       <h1>TEST</h1>
       <h1>TEST</h1>

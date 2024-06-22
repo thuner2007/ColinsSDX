@@ -15,7 +15,8 @@ interface SimpleCheckbox1Props {
   borderWidth?: string;
   borderColor?: string;
   alignItems?: "center" | "flex-start" | "flex-end";
-  checkedSymbol: string;
+  checkedSymbol?: string;
+  checkedSymbolPadding?: string;
 }
 
 const SimpleCheckbox1: React.FC<SimpleCheckbox1Props> = ({
@@ -32,7 +33,8 @@ const SimpleCheckbox1: React.FC<SimpleCheckbox1Props> = ({
   margin,
   padding,
   alignItems,
-  checkedSymbol,
+  checkedSymbol = "✔",
+  checkedSymbolPadding,
 }) => {
   return (
     <div
@@ -61,6 +63,7 @@ const SimpleCheckbox1: React.FC<SimpleCheckbox1Props> = ({
               width: "1.5rem",
               border: `2px solid ${bgColor || "white"}`,
               color: color || "white",
+              padding: checkedSymbolPadding || "0",
               "--checked-symbol": `"${checkedSymbol}"`,
             } as React.CSSProperties
           }
@@ -70,7 +73,7 @@ const SimpleCheckbox1: React.FC<SimpleCheckbox1Props> = ({
         />
       </div>
       <div className="rightDivSimpleCheckbox1">
-        <p className="labelSimpleCheckbox1">{label}</p>
+        <p className="labelSimpleCheckbox1">{label || "label"}</p>
         <p className="textSimpleCheckbox1">{text}</p>
       </div>
     </div>
