@@ -1,29 +1,33 @@
-import './SimpleVerticalDropdown.css';
+import "./SimpleVerticalDropdown.css";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 interface Item {
   alt?: string;
   label?: string;
-  onclick?: () => void;
+  onClick?: () => void;
 }
 interface SimpleVerticalDropdownProps {
-  showBorder?: boolean;
-  label: string;
+  width?: string;
+  height?: string;
+  label?: string;
   bgBlur?: string;
   color?: string;
   fontSize?: string;
   borderRadius?: string;
   unicodeArrowUp?: string;
   unicodeArrowDown?: string;
-  boxShadowColor?: string;
-  boxShadow?: boolean;
+  boxShadow?: string;
   bgColor?: string;
   items?: Item[];
+  border?: string;
+  margin?: string;
+  padding?: string;
 }
 
 const SimpleVerticalDropdown: React.FC<SimpleVerticalDropdownProps> = ({
-  showBorder,
+  width,
+  height,
   label,
   borderRadius,
   unicodeArrowUp,
@@ -32,26 +36,19 @@ const SimpleVerticalDropdown: React.FC<SimpleVerticalDropdownProps> = ({
   bgColor,
   color,
   fontSize,
-  boxShadowColor,
   boxShadow,
+  border,
+  margin,
+  padding,
 }) => {
   const [isDropped, setIsDropped] = useState(false);
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
-
-  const getRandomColor = () => {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  };
 
   const handleBlur = () => {
     setTimeoutId(
       setTimeout(() => {
         setIsDropped(false);
-      }, 200) // Change delay time as needed
+      }, 200)
     );
   };
 
@@ -62,70 +59,80 @@ const SimpleVerticalDropdown: React.FC<SimpleVerticalDropdownProps> = ({
     }
   };
 
-  const randomBorderColor = getRandomColor();
   return (
     <div
       className="mainDivSimpleVerticalDropdown"
       style={{
-        border: showBorder ? `2px solid ${randomBorderColor}` : 'none',
+        width: width || "auto",
+        height: height || "auto",
+        margin: margin || "0",
       }}
     >
       <button
         className="buttonSimpleVerticalDropdown"
         style={{
-          borderRadius: borderRadius ?? '10px',
-          backgroundColor: bgColor ? bgColor : '#7553BB',
-          color: color ? color : 'white',
-          fontSize: fontSize ? fontSize : '1rem',
-          boxShadow: boxShadow ? `0px 0px 10px 1px ${boxShadowColor || '#7553BB'}` : 'none',
+          borderRadius: borderRadius || "1rem",
+          backgroundColor: bgColor || "#7553BB",
+          color: color || "white",
+          fontSize: fontSize || "1rem",
+          boxShadow: boxShadow || "none",
+          border: border || "none",
+          padding: padding || "0.5rem 1rem",
         }}
         onClick={() => setIsDropped(!isDropped)}
-        onBlur={handleBlur}
         onFocus={handleFocus}
+        onBlur={handleBlur}
       >
-        {label}{' '}
+        <h1
+          className="labelSimpleVerticalDropdown"
+          style={{ fontSize: fontSize || "1.2rem" }}
+        >
+          {label || "label"}
+        </h1>
         <p
-          id="droppedArrowsSimpleVerticalDropdown"
-          style={{ color: color ? color : 'white' }}
+          className="droppedArrowsSimpleVerticalDropdown"
+          style={{ color: color || "white" }}
         >
           {isDropped
             ? unicodeArrowUp
-              ? String.fromCodePoint(parseInt(unicodeArrowUp ?? '', 16))
-              : '\u{2B9D}'
+              ? String.fromCodePoint(parseInt(unicodeArrowUp ?? "", 16))
+              : "\u{2B9D}"
             : unicodeArrowDown
-            ? String.fromCodePoint(parseInt(unicodeArrowDown ?? '', 16))
-            : '\u{2B9F}'}
+            ? String.fromCodePoint(parseInt(unicodeArrowDown ?? "", 16))
+            : "\u{2B9F}"}
         </p>
       </button>
       {isDropped && (
         <div
           className="droppedDivSimpleVerticalDropdown"
           style={{
-            position: 'absolute',
-            top: 'calc(100% + 1rem)',
-            left: 0,
-            borderRadius: borderRadius ? borderRadius : '10px',
-            boxShadow: boxShadow ? `0px 0px 10px 1px ${boxShadowColor || '#7553BB'}` : 'none',
+            position: "absolute",
+            top: "calc(100% + 1rem)",
+            left: "0",
+            borderRadius: borderRadius || "1rem",
+            boxShadow: boxShadow || "none",
+            border: border || "none",
           }}
         >
           {items &&
             items.map((item, index) => (
-              <div key={index}>
+              <>
                 <button
                   className="buttonOptionSimpleVerticalDropdown"
-                  onClick={item.onclick ? item.onclick : () => {}}
+                  onClick={item.onClick ? item.onClick : () => {}}
                   style={{
-                    backgroundColor: bgColor ? bgColor : '#7553BB',
-                    color: color ? color : 'white',
-                    fontSize: fontSize ? fontSize : '1rem',
+                    backgroundColor: bgColor || "#7553BB",
+                    color: color || "white",
+                    fontSize: fontSize || "1rem",
+                    padding: padding || "0.5rem 1rem",
                   }}
                 >
-                  {item.label ? item.label : 'Option ' + index}
+                  {item.label || "Option " + index}
                 </button>
                 {index !== items.length - 1 && (
                   <div className="buttonOptionBorderSimpleVerticalDropdown"></div>
                 )}
-              </div>
+              </>
             ))}
         </div>
       )}
