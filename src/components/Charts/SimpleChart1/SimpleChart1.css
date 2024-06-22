@@ -4,9 +4,10 @@
 }
 
 .parentSliderDivSimpleChart1 {
-  width: 90%;
+  width: 100%;
   margin: 0.2rem;
   overflow: hidden;
+  align-self: center;
 }
 
 .sliderDivSimpleChart1 {

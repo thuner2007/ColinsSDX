@@ -20,7 +20,11 @@ function App() {
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
-      <SimpleChart1 percentage={33} />
+      <SimpleChart1
+        percentage={33}
+        text="Your coolness"
+        alignItems="flex-start"
+      />
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>

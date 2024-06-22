@@ -20,7 +20,7 @@ interface SimpleChart1Props {
   alignItems?: "space-between" | "center" | "flex-start" | "flex-end";
   justifyContent?: "space-between" | "center" | "flex-start" | "flex-end";
   notReachedColor?: string;
-  reachtedColor?: string;
+  reachedColor?: string;
   gap?: string;
 }
 
@@ -43,7 +43,7 @@ const SimpleChart1: React.FC<SimpleChart1Props> = ({
   alignItems,
   justifyContent,
   notReachedColor,
-  reachtedColor,
+  reachedColor,
   gap,
 }) => {
   return (
@@ -85,11 +85,18 @@ const SimpleChart1: React.FC<SimpleChart1Props> = ({
           className="sliderDivSimpleChart1"
           style={{
             width: `${percentage}%`,
-            backgroundColor: reachtedColor ? reachtedColor : "black",
+            backgroundColor: reachedColor ? reachedColor : "black",
           }}
         ></div>
       </div>
-      {text && <p className="textSimpleChart1">{text}</p>}
+      {text && (
+        <p
+          className="textSimpleChart1"
+          style={{ fontSize: textFontSize || "1rem" }}
+        >
+          {text}
+        </p>
+      )}
     </div>
   );
 };
