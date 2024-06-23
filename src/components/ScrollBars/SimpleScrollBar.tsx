@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface Props {
   color?: string;
@@ -15,6 +15,7 @@ const SimpleScrollBar: React.FC<Props> = ({
   width,
   borderRadius,
   backGroundShadow,
+  hoverColor,
 }) => {
   return (
     <div className="mainDivSimpleScrollBar">
@@ -22,23 +23,25 @@ const SimpleScrollBar: React.FC<Props> = ({
         {`
 /* width */
 ::-webkit-scrollbar {
-  width: ${width ? width : '10px'};
+  width: ${width || "15px"};
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px ${backGroundShadow ? backGroundShadow : 'grey'}; 
+  box-shadow: ${backGroundShadow || "none"};
+  background: ${backGroundColor || "#f1f1f1"};
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: ${color ? color : '#888'}; 
-  border-radius: ${borderRadius ? borderRadius : '10px'};
+  background: ${color || "#7553BB"}; 
+  border-radius: ${borderRadius || "1rem"};
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: ${backGroundColor ? backGroundColor : '#555'}; 
+  background: ${hoverColor || "#7553BB"};
+  cursor: pointer; 
 `}
       </style>
     </div>

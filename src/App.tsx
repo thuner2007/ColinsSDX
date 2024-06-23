@@ -11,6 +11,7 @@ import SimpleInputWithRequired from "./components/InputFields/SimpleInputWithReq
 import NavBarNormal1 from "./components/NavBars/NavBarNormal1/NavBarNormal1.tsx";
 import NavBarWithComponents1 from "./components/NavBars/NavBarWithComponents1/NavBarWithComponents1.tsx";
 import SimpleSmallPopUp from "./components/PopUps/SimpleSmallPopUp/SimpleSmallPopUp.tsx";
+import SimpleScrollBar from "./components/ScrollBars/SimpleScrollBar.tsx";
 function App() {
   const [show, setShow] = useState(false);
   const consoleLogHey = () => {
@@ -27,7 +28,7 @@ function App() {
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
-      <SimpleSmallPopUp onClose={consoleLogHey} show={true} />
+      <SimpleScrollBar />
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
