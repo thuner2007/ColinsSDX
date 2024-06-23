@@ -10,6 +10,7 @@ import SimpleBigTextInputWithRequired from "./components/InputFields/SimpleBigTe
 import SimpleInputWithRequired from "./components/InputFields/SimpleInputWithRequired/SimpleInputWithRequired.tsx";
 import NavBarNormal1 from "./components/NavBars/NavBarNormal1/NavBarNormal1.tsx";
 import NavBarWithComponents1 from "./components/NavBars/NavBarWithComponents1/NavBarWithComponents1.tsx";
+import SimpleSmallPopUp from "./components/PopUps/SimpleSmallPopUp/SimpleSmallPopUp.tsx";
 function App() {
   const [show, setShow] = useState(false);
   const consoleLogHey = () => {
@@ -26,44 +27,7 @@ function App() {
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
-      <NavBarWithComponents1 height="60px" calcScrollBar={"15px"}>
-        <SimpleVerticalDropdown
-          label="test"
-          items={[
-            {
-              label: "test",
-              onClick: consoleLogHey,
-            },
-          ]}
-        />
-        <SimpleVerticalDropdown
-          label="test"
-          items={[
-            {
-              label: "test",
-              onClick: consoleLogHey,
-            },
-          ]}
-        />
-        <SimpleVerticalDropdown
-          label="test"
-          items={[
-            {
-              label: "test",
-              onClick: consoleLogHey,
-            },
-          ]}
-        />
-        <SimpleVerticalDropdown
-          label="test"
-          items={[
-            {
-              label: "test",
-              onClick: consoleLogHey,
-            },
-          ]}
-        />
-      </NavBarWithComponents1>
+      <SimpleSmallPopUp onClose={consoleLogHey} show={true} />
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
