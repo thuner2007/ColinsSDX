@@ -7,6 +7,7 @@ import SimpleChart1 from "./components/Charts/SimpleChart1/SimpleChart1.tsx";
 import SimpleCheckbox1 from "./components/Checkboxes/SimpleCheckbox1/SimpleCheckbox1.tsx";
 import SimpleVerticalDropdown from "./components/Dropdowns/SimpleVerticalDropdown/SimpleVerticalDropdown.tsx";
 import SimpleBigTextInputWithRequired from "./components/InputFields/SimpleBigTextInputWithRequired/SimpleBigTextInputWithRequired.tsx";
+import SimpleInputWithRequired from "./components/InputFields/SimpleInputWithRequired/SimpleInputWithRequired.tsx";
 function App() {
   const [show, setShow] = useState(false);
   const consoleLogHey = () => {
@@ -23,7 +24,7 @@ function App() {
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
-      <SimpleBigTextInputWithRequired label="test" required={false} />
+      <SimpleInputWithRequired label="test" required={true} />
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>

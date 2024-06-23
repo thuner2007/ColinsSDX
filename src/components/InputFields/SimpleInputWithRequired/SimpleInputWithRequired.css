@@ -1,42 +1,20 @@
 .mainDivSimpleInputWithRequired {
-  height: fit-content;
-  width: fit-content;
-}
-
-.inputSimpleInputWithRequired {
-  padding: 0.5rem;
-  padding-left: 1rem;
-
-  border: 2px solid black;
-  color: black;
-}
-
-.mandatorySpanSimpleInputWithRequired {
-  margin: 0;
-  justify-self: start;
-}
-
-.labelHeaderSimpleInputWithRequired {
-  font-size: 1.3rem;
-  font-weight: bold;
-
-  margin: 0;
-}
-
-#labelDivSimpleInputWithRequired {
   display: flex;
-  margin-bottom: 0.2rem;
-
-  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
 }
 
-.errorMessageSimpleInputWithRequired {
-  margin: 0;
-  margin-top: 0.2rem;
-  margin-left: 0.5rem;
+.labelLabelSimpleInputWithRequired {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
 
-  color: red;
-  font-size: 1rem;
+.textareaSimpleInputWithRequired::placeholder {
+  color: var(--placeholder-color);
+}
 
-  height: 1.2rem;
+.textareaSimpleInputWithRequired:focus {
+  outline: var(--focus-border);
 }

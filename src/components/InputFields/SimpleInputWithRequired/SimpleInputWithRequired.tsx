@@ -1,80 +1,70 @@
-import React from 'react';
-import './SimpleInputWithRequired.css';
+import React from "react";
+import "./SimpleInputWithRequired.css";
 
 interface SimpleInputWithRequiredProps {
-  showBorder?: boolean;
-  width?: string;
-  placeholder?: string;
-  label?: string;
-  fontSize?: string;
+  label: string;
+  required: boolean;
+  border?: string;
   borderRadius?: string;
-  required?: boolean;
-  hasError?: boolean;
-  errorMessage?: string;
-  maxLength?: number;
-  labelAlign?: 'start' | 'center' | 'end';
-  onTextChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  backgroundColor?: string;
+  color?: string;
+  fontSize?: string;
+  padding?: string;
+  margin?: string;
+  width?: string;
+  height?: string;
+  placeholder?: string;
+  placeholderColor?: string;
+  disabled?: boolean;
+  isResizeable?: boolean;
+  focusBorder?: string;
 }
 
 const SimpleInputWithRequired: React.FC<SimpleInputWithRequiredProps> = ({
-  showBorder,
-  width,
-  placeholder,
-  fontSize,
-  required,
   label,
+  required,
+  border,
   borderRadius,
-  hasError,
-  errorMessage,
-  maxLength,
-  labelAlign,
-  onTextChange,
+  backgroundColor,
+  color,
+  fontSize,
+  padding,
+  margin,
+  width,
+  height,
+  placeholder,
+  placeholderColor,
+  disabled,
+  focusBorder,
 }) => {
-  const getRandomColor = () => {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  };
-  const randomBorderColor = getRandomColor();
   return (
-    <div
-      className="mainDivSimpleInputWithRequired"
-      style={{ border: showBorder ? `2px solid ${randomBorderColor}` : 'none' }}
-    >
-      <div
-        id="labelDivSimpleInputWithRequired"
-        style={{ justifyContent: labelAlign ? labelAlign : 'start' }}
-      >
+    <div className="mainDivSimpleInputWithRequired">
+      <label className="labelLabelSimpleInputWithRequired">
         {required && (
-          <span
-            className="mandatorySpanSimpleInputWithRequired"
-            style={{
-              color: hasError ? 'red' : 'black',
-            }}
-          >
-            *
-          </span>
+          <span className="requiredSpanSimpleInputWithRequired">*</span>
         )}
-        {label && (
-          <h2 className="labelHeaderSimpleInputWithRequired">{label}</h2>
-        )}
-      </div>
-
+        {label}
+      </label>
       <input
-        className="inputSimpleInputWithRequired"
-        style={{
-          borderRadius: borderRadius ? borderRadius : '1rem',
-          width: width ? width : '88%',
-          fontSize: fontSize ? fontSize : '1rem',
-        }}
-        placeholder={placeholder ? placeholder : 'Type here...'}
-        onChange={onTextChange}
-        maxLength={maxLength ? maxLength : 1000}
+        className="textareaSimpleInputWithRequired"
+        style={
+          {
+            border: border || "1px solid #7553BB",
+            borderRadius: borderRadius || "1rem",
+            backgroundColor: backgroundColor || "#7553BB",
+            color: color || "white",
+            fontSize: fontSize || "1rem",
+            padding: padding || "0.7rem",
+            margin: margin || "0",
+            width: width || "auto",
+            height: height || "auto",
+            "--placeholder-color": placeholderColor || "lightgray",
+            "--focus-border": focusBorder || "none",
+          } as React.CSSProperties
+        }
+        placeholder={placeholder || "Type here..."}
+        disabled={disabled}
       />
-      <p className="errorMessageSimpleInputWithRequired">{errorMessage}</p>
     </div>
   );
 };

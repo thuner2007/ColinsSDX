@@ -1,6 +1,5 @@
 import React from "react";
 import "./SimpleBigTextInputWithRequired.css";
-import { hover } from "@testing-library/user-event/dist/hover";
 
 interface SimpleBigTextInputWithRequiredProps {
   label: string;
@@ -38,7 +37,7 @@ const SimpleBigTextInputWithRequired: React.FC<
   placeholder,
   placeholderColor,
   disabled,
-  isResizeable: isFlexible,
+  isResizeable,
   focusBorder,
 }) => {
   return (
@@ -62,7 +61,7 @@ const SimpleBigTextInputWithRequired: React.FC<
             margin: margin || "0",
             width: width || "auto",
             height: height || "auto",
-            resize: isFlexible ? "both" : "none",
+            resize: isResizeable ? "both" : "none",
             "--placeholder-color": placeholderColor || "lightgray",
             "--focus-border": focusBorder || "none",
           } as React.CSSProperties
