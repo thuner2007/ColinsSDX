@@ -1,48 +1,38 @@
-import React from 'react';
-import './NavBarWithComponents1.css';
+import React from "react";
+import "./NavBarWithComponents1.css";
 
-type JustifyContentOptions = 'center' | 'space-between';
+type JustifyContentOptions = "center" | "space-between";
 
 interface NavBarWithComponents1Props {
   height?: string;
   bgColor?: string;
   itemSize?: string;
-  disableBorder?: boolean;
-  borderColor?: string;
-  borderWidth?: string;
   bgBlur?: string;
   justifyContent?: JustifyContentOptions;
-  calcScrollBar?: boolean;
+  calcScrollBar?: string;
   children?: React.ReactNode;
+  borderButtom?: string;
 }
 
 const NavBarWithComponents1: React.FC<NavBarWithComponents1Props> = ({
   height,
   bgColor,
   itemSize,
-  disableBorder,
   bgBlur,
   justifyContent,
-  borderColor,
-  borderWidth,
   calcScrollBar,
   children,
+  borderButtom,
 }) => {
   return (
     <div
       style={{
-        width: calcScrollBar === true ? 'calc(100vw - 10px)' : '100vw',
-        height: height,
-        backgroundColor: bgColor,
-        borderBottom: disableBorder
-          ? 'none'
-          : borderColor && !borderWidth
-          ? '1px solid ' + borderColor
-          : !borderColor && borderWidth
-          ? borderWidth + ' solid black'
-          : borderWidth + ' solid ' + borderColor,
-        backdropFilter: bgBlur ? `blur(${bgBlur})` : undefined,
-        justifyContent: justifyContent,
+        width: `calc(100vw - ${calcScrollBar || "0px"})`,
+        height: height || "50px",
+        backgroundColor: bgColor || "rgba(117, 83, 187, 0.5)",
+        backdropFilter: bgBlur ? `blur(${bgBlur})` : "blur(10px)",
+        justifyContent: justifyContent || "space-between",
+        borderBottom: borderButtom || "1px solid rgba(117, 83, 187, 0.5)",
       }}
       className="mainDivNavBarWithComponents1"
     >

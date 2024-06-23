@@ -9,6 +9,7 @@ import SimpleVerticalDropdown from "./components/Dropdowns/SimpleVerticalDropdow
 import SimpleBigTextInputWithRequired from "./components/InputFields/SimpleBigTextInputWithRequired/SimpleBigTextInputWithRequired.tsx";
 import SimpleInputWithRequired from "./components/InputFields/SimpleInputWithRequired/SimpleInputWithRequired.tsx";
 import NavBarNormal1 from "./components/NavBars/NavBarNormal1/NavBarNormal1.tsx";
+import NavBarWithComponents1 from "./components/NavBars/NavBarWithComponents1/NavBarWithComponents1.tsx";
 function App() {
   const [show, setShow] = useState(false);
   const consoleLogHey = () => {
@@ -25,7 +26,44 @@ function App() {
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
-      <NavBarNormal1 />
+      <NavBarWithComponents1 height="60px" calcScrollBar={"15px"}>
+        <SimpleVerticalDropdown
+          label="test"
+          items={[
+            {
+              label: "test",
+              onClick: consoleLogHey,
+            },
+          ]}
+        />
+        <SimpleVerticalDropdown
+          label="test"
+          items={[
+            {
+              label: "test",
+              onClick: consoleLogHey,
+            },
+          ]}
+        />
+        <SimpleVerticalDropdown
+          label="test"
+          items={[
+            {
+              label: "test",
+              onClick: consoleLogHey,
+            },
+          ]}
+        />
+        <SimpleVerticalDropdown
+          label="test"
+          items={[
+            {
+              label: "test",
+              onClick: consoleLogHey,
+            },
+          ]}
+        />
+      </NavBarWithComponents1>
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
