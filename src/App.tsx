@@ -6,6 +6,7 @@ import SimpleButton1 from "./components/Buttons/SimpleButton1/SimpleButton1.tsx"
 import SimpleChart1 from "./components/Charts/SimpleChart1/SimpleChart1.tsx";
 import SimpleCheckbox1 from "./components/Checkboxes/SimpleCheckbox1/SimpleCheckbox1.tsx";
 import SimpleVerticalDropdown from "./components/Dropdowns/SimpleVerticalDropdown/SimpleVerticalDropdown.tsx";
+import SimpleBigTextInputWithRequired from "./components/InputFields/SimpleBigTextInputWithRequired/SimpleBigTextInputWithRequired.tsx";
 function App() {
   const [show, setShow] = useState(false);
   const consoleLogHey = () => {
@@ -22,13 +23,7 @@ function App() {
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
-      <SimpleVerticalDropdown
-        label="Cool dropdown"
-        items={[
-          { label: "Item 1", onClick: consoleLogHey },
-          { label: "Item 2", onClick: consoleLogHey },
-        ]}
-      />
+      <SimpleBigTextInputWithRequired label="test" required={false} />
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
