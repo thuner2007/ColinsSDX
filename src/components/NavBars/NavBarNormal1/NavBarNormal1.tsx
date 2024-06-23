@@ -1,5 +1,5 @@
-import React from 'react';
-import './NavBarNormal1.css';
+import React from "react";
+import "./NavBarNormal1.css";
 
 interface Item {
   src: string;
@@ -8,19 +8,17 @@ interface Item {
   onclick?: () => void;
 }
 
-type JustifyContentOptions = 'center' | 'space-between';
+type JustifyContentOptions = "center" | "space-between";
 
 interface NavBarNormal1Props {
   height?: string;
   bgColor?: string;
   items?: Item[];
   itemSize?: string;
-  disableBorder?: boolean;
-  borderColor?: string;
-  borderWidth?: string;
-  bgBlur?: string;
+  bgBlur?: number;
   justifyContent?: JustifyContentOptions;
-  calcScrollBar?: boolean;
+  calcScrollBar?: string;
+  borderButtom?: string;
 }
 
 const NavBarNormal1: React.FC<NavBarNormal1Props> = ({
@@ -28,41 +26,33 @@ const NavBarNormal1: React.FC<NavBarNormal1Props> = ({
   bgColor,
   items,
   itemSize,
-  disableBorder,
   bgBlur,
   justifyContent,
-  borderColor,
-  borderWidth,
   calcScrollBar,
+  borderButtom,
 }) => {
   return (
     <div
       style={{
-        width: calcScrollBar === true ? 'calc(100vw - 10px)' : '100vw',
-        height: height,
-        backgroundColor: bgColor,
-        borderBottom: disableBorder
-          ? 'none'
-          : borderColor && !borderWidth
-          ? '1px solid ' + borderColor
-          : !borderColor && borderWidth
-          ? borderWidth + ' solid black'
-          : borderWidth + ' solid ' + borderColor,
-        backdropFilter: bgBlur ? `blur(${bgBlur})` : undefined,
-        justifyContent: justifyContent,
+        width: `calc(100vw - ${calcScrollBar || "0px"})`,
+        height: height || "50px",
+        backgroundColor: bgColor || "rgba(117, 83, 187, 0.5)",
+        backdropFilter: bgBlur ? `blur(${bgBlur})` : "blur(10px)",
+        justifyContent: justifyContent || "space-between",
+        borderBottom: borderButtom || "1px solid rgba(117, 83, 187, 0.5)",
       }}
       className="mainDivNavBarNormal1"
     >
       {items &&
         items.map((item, index) => (
           <img
-            alt={item.alt ? item.alt : 'item' + index}
+            alt={item.alt ? item.alt : "item" + index}
             src={item.src}
             key={index}
             style={{
               width: itemSize,
               height: itemSize,
-              cursor: item.hover ? 'default' : undefined,
+              cursor: item.hover ? "default" : undefined,
             }}
             className="itemNavBarNormal1"
             onClick={item.onclick ? item.onclick : () => {}}

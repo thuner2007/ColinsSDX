@@ -8,6 +8,7 @@ import SimpleCheckbox1 from "./components/Checkboxes/SimpleCheckbox1/SimpleCheck
 import SimpleVerticalDropdown from "./components/Dropdowns/SimpleVerticalDropdown/SimpleVerticalDropdown.tsx";
 import SimpleBigTextInputWithRequired from "./components/InputFields/SimpleBigTextInputWithRequired/SimpleBigTextInputWithRequired.tsx";
 import SimpleInputWithRequired from "./components/InputFields/SimpleInputWithRequired/SimpleInputWithRequired.tsx";
+import NavBarNormal1 from "./components/NavBars/NavBarNormal1/NavBarNormal1.tsx";
 function App() {
   const [show, setShow] = useState(false);
   const consoleLogHey = () => {
@@ -24,7 +25,7 @@ function App() {
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
-      <SimpleInputWithRequired label="test" required={true} />
+      <NavBarNormal1 />
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
