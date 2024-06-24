@@ -8,6 +8,7 @@ interface SimpleDivider1Props {
   borderRadius?: string;
   marginTop?: string;
   marginBottom?: string;
+  boxShadow?: string;
 }
 
 const SimpleDivider1: React.FC<SimpleDivider1Props> = ({
@@ -17,6 +18,7 @@ const SimpleDivider1: React.FC<SimpleDivider1Props> = ({
   borderRadius = '1rem',
   marginTop = '1rem',
   marginBottom = '1rem',
+  boxShadow = 'none',
 }) => {
   return (
     <hr
@@ -28,6 +30,7 @@ const SimpleDivider1: React.FC<SimpleDivider1Props> = ({
         borderRadius: borderRadius,
         marginTop: marginTop,
         marginBottom: marginBottom,
+        boxShadow: boxShadow,
       }}
     ></hr>
   );
