@@ -1,0 +1,29 @@
+.mainDivSimpleFooter1 {
+  display: flex;
+  justify-content: center;
+}
+
+.rowSimpleFooter1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+
+  height: 100%;
+}
+
+.rowLabelSimpleFooter1 {
+  font-size: 1rem;
+}
+
+.itemSimpleFooter1 {
+  cursor: pointer;
+}
+
+.parentDivRowsSimpleFooter1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1rem;
+}

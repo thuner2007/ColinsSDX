@@ -14,6 +14,7 @@ import SimpleSmallPopUp from './components/PopUps/SimpleSmallPopUp/SimpleSmallPo
 import SimpleScrollBar from './components/ScrollBars/SimpleScrollBar.tsx';
 import SimpleCard1 from './components/Cards/SimpleCard1/SimpleCard1.tsx';
 import SimpleDivider1 from './Dividers/SimpleDivider1/SimpleDivider1.tsx';
+import SimpleFooter1 from './components/Footers/SimpleFooter1/SimpleFooter1.tsx';
 function App() {
   const [show, setShow] = useState(false);
   const consoleLogHey = () => {
@@ -33,6 +34,7 @@ function App() {
       <SimpleCard1 />
       <SimpleDivider1 />
       <SimpleCard1 />
+      <SimpleScrollBar />
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
@@ -60,6 +62,7 @@ function App() {
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
+      <SimpleFooter1 />
     </div>
   );
 }
