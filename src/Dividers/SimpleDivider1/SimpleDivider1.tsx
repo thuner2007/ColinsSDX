@@ -18,7 +18,7 @@ const SimpleDivider1: React.FC<SimpleDivider1Props> = ({
   borderRadius = '1rem',
   marginTop = '1rem',
   marginBottom = '1rem',
-  boxShadow = 'none',
+  boxShadow = '0px 0px 10px 0px rgba(0,0,0,0.25)',
 }) => {
   return (
     <hr
