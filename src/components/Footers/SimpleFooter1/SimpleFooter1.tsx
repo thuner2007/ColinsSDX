@@ -8,10 +8,11 @@ interface SimpleFooter1Props {
   rows: [
     {
       label: string;
-      items: [{ label: string; onClick: () => void }];
+      items: [{ label: string; onClick?: () => void }];
     }
   ];
   alignItems?: 'flex-start' | 'center' | 'flex-end';
+  borderTop?: string;
 }
 
 const SimpleFooter1: React.FC<SimpleFooter1Props> = ({
@@ -35,6 +36,7 @@ const SimpleFooter1: React.FC<SimpleFooter1Props> = ({
     },
   ],
   alignItems = 'center',
+  borderTop = '1px solid black',
 }) => {
   return (
     <div
@@ -45,6 +47,7 @@ const SimpleFooter1: React.FC<SimpleFooter1Props> = ({
         padding: padding,
         alignItems: alignItems,
         width: `calc(100% - ${padding} - ${padding})`,
+        borderTop: borderTop,
       }}
     >
       <div className="parentDivRowsSimpleFooter1">

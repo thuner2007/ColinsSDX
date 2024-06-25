@@ -62,7 +62,38 @@ function App() {
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
-      <SimpleFooter1 />
+      <SimpleFooter1
+        rows={[
+          {
+            label: 'Row 1',
+            items: [
+              { label: 'Item 1', onClick: () => console.log('Item 1 clicked') },
+              { label: 'Item 2', onClick: () => console.log('Item 2 clicked') },
+            ],
+          },
+          {
+            label: 'Row 2',
+            items: [
+              { label: 'Item 1', onClick: () => console.log('Item 1 clicked') },
+              { label: 'Item 2', onClick: () => console.log('Item 2 clicked') },
+            ],
+          },
+          {
+            label: 'Row 2',
+            items: [
+              { label: 'Item 1', onClick: () => console.log('Item 1 clicked') },
+              { label: 'Item 2', onClick: () => console.log('Item 2 clicked') },
+            ],
+          },
+          {
+            label: 'Row 2',
+            items: [
+              { label: 'Item 1', onClick: () => console.log('Item 1 clicked') },
+              { label: 'Item 2', onClick: () => console.log('Item 2 clicked') },
+            ],
+          },
+        ]}
+      />
     </div>
   );
 }
