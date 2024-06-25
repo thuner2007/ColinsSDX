@@ -1,42 +1,61 @@
-import React from 'react';
-import './SimpleFooter1.css';
+import React from "react";
+import "./SimpleFooter1.css";
 
 interface SimpleFooter1Props {
   bgColor?: string;
   color?: string;
   padding?: string;
-  rows: [
-    {
-      label: string;
-      items: [{ label: string; onClick?: () => void }];
-    }
-  ];
-  alignItems?: 'flex-start' | 'center' | 'flex-end';
+  rows?: {
+    label: string;
+    items: { label: string; onClick?: () => void }[];
+  }[];
+  alignRows?: "flex-start" | "center" | "flex-end";
+  alignItems?: "flex-start" | "center" | "flex-end";
   borderTop?: string;
+  gap?: string;
+  textMargin?: string;
+  itemUnderline?: "none" | "underline";
 }
 
 const SimpleFooter1: React.FC<SimpleFooter1Props> = ({
-  bgColor = 'white',
-  color = 'black',
-  padding = '1rem',
+  bgColor = "#7553BB",
+  color = "white",
+  padding = "2rem",
   rows = [
     {
-      label: 'Row 1',
+      label: "Legals",
       items: [
-        { label: 'Item 1', onClick: () => console.log('Item 1 clicked') },
-        { label: 'Item 2', onClick: () => console.log('Item 2 clicked') },
+        { label: "Impressum", onClick: () => console.log("Impressum clicked") },
+        {
+          label: "Pricacy Policy",
+          onClick: () => console.log("Pricacy Policy clicked"),
+        },
+        {
+          label: "Terms of Service",
+          onClick: () => console.log("Terms of Service clicked"),
+        },
+        {
+          label: "Cookie Policy",
+          onClick: () => console.log("Cookie Policy clicked"),
+        },
       ],
     },
     {
-      label: 'Row 2',
+      label: "Services",
       items: [
-        { label: 'Item 1', onClick: () => console.log('Item 1 clicked') },
-        { label: 'Item 2', onClick: () => console.log('Item 2 clicked') },
+        { label: "Buy", onClick: () => console.log("Buy clicked") },
+        { label: "Sell", onClick: () => console.log("Sell clicked") },
+        { label: "Rent", onClick: () => console.log("Rent clicked") },
+        { label: "Lease", onClick: () => console.log("Lease clicked") },
       ],
     },
   ],
-  alignItems = 'center',
-  borderTop = '1px solid black',
+  alignItems = "center",
+  borderTop = "1px solid purple",
+  alignRows = "center",
+  gap = "2rem",
+  textMargin = "1rem",
+  itemUnderline = "underline",
 }) => {
   return (
     <div
@@ -45,18 +64,23 @@ const SimpleFooter1: React.FC<SimpleFooter1Props> = ({
         backgroundColor: bgColor,
         color: color,
         padding: padding,
-        alignItems: alignItems,
+        alignItems: alignRows,
         width: `calc(100% - ${padding} - ${padding})`,
         borderTop: borderTop,
       }}
     >
-      <div className="parentDivRowsSimpleFooter1">
+      <div className="parentDivRowsSimpleFooter1" style={{ gap: gap }}>
         {rows.map((row, index) => (
-          <div key={index} className="rowSimpleFooter1">
+          <div
+            key={index}
+            className="rowSimpleFooter1"
+            style={{ alignItems: alignItems }}
+          >
             <h1 className="rowLabelSimpleFooter1">{row.label}</h1>
             {row.items.map((item, index) => (
               <p
                 className="itemSimpleFooter1"
+                style={{ margin: textMargin, textDecoration: itemUnderline }}
                 key={index}
                 onClick={item.onClick}
               >
