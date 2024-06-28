@@ -1,0 +1,35 @@
+.mainDivSimpleLoader1 {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid black
+}
+
+.html, body {
+    background-color: rgb(3,0,51);
+}
+.mainDivSimpleLoader1::before, .mainDivSimpleLoader1::after {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+
+    box-shadow: 0 0px 10px 5px inset rgba(85, 85, 85, 0.493);
+}
+
+.mainDivSimpleLoader1::before {
+    box-shadow: 0 2px 0 rgb(255, 0, 255) inset;
+
+    animation: rotate 2s linear infinite;
+}
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
