@@ -1,7 +1,7 @@
 import React from 'react';
-import './SimplePrimaryButton1.css';
+import './SimpleSecondaryButton1.css';
 
-interface SimplePrimaryButton1Props {
+interface SimpleSecondaryButton1Props {
   label?: string;
   width?: string;
   height?: string;
@@ -20,20 +20,20 @@ interface SimplePrimaryButton1Props {
   willChange?: boolean;
 }
 
-const SimplePrimaryButton1: React.FC<SimplePrimaryButton1Props> = ({
+const SimpleSecondaryButton1: React.FC<SimpleSecondaryButton1Props> = ({
   label = 'Click me!',
   width = '200px',
   height = '50px',
-  bgColor = '#7553BB',
+  bgColor = 'white',
   borderRadius = '1rem',
-  hoverBgColor = '#7553BB',
-  color = 'white',
+  hoverBgColor = 'white',
+  color = '#7553BB',
   transformScale = 1,
   transitionTime = '0.3s',
   fontSize = '1.5rem',
   boxShadow = 'none',
   willChange = false,
-  border = '1px solid #7553BB',
+  border = '2px solid #7553BB',
   margin = '0.5rem',
   padding = '0',
   onClick,
@@ -41,7 +41,7 @@ const SimplePrimaryButton1: React.FC<SimplePrimaryButton1Props> = ({
   return (
     <>
       <button
-        className="mainSimplePrimaryButton1"
+        className="mainSimpleSecondaryButton1"
         style={{
           willChange: willChange ? 'transform' : 'auto',
           border: border,
@@ -69,4 +69,4 @@ const SimplePrimaryButton1: React.FC<SimplePrimaryButton1Props> = ({
   );
 };
 
-export default SimplePrimaryButton1;
+export default SimpleSecondaryButton1;
