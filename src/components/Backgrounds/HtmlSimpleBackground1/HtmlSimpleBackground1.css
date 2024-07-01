@@ -1,0 +1,7 @@
+.mainDivHtmlSimpleBackground1 {
+  display: none;
+}
+
+html {
+  background-color: var(--HtmlSimpleBackground1_backgroundColor);
+}

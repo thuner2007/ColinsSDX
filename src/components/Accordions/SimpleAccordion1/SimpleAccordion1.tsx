@@ -1,5 +1,6 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import "./SimpleAccordion1.css";
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import './SimpleAccordion1.css';
+import { cdx_config } from '../../../cdx_config.ts';
 
 interface Item {
   label?: string;
@@ -12,30 +13,30 @@ interface SimpleAccordion1Props {
   bgColor?: string;
   color?: string;
   borderRadius?: string;
-  fontSize?: string;
+  labelFontSize?: string;
+  textFontSize?: string;
   margin?: string;
   textWidth?: string;
   padding?: string;
-  alignItems?: "center" | "flex-start" | "flex-end" | "space-between";
+  alignItems?: 'center' | 'flex-start' | 'flex-end' | 'space-between';
   dynamicHeight?: boolean;
-  borderWidth?: string;
-  borderColor?: string;
+  border?: string;
 }
 
 const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
-  width,
-  bgColor,
-  color,
-  borderRadius,
-  fontSize,
-  margin,
-  textWidth,
-  padding,
-  alignItems,
-  items = [{ label: "Label", text: "Text" }],
-  dynamicHeight,
-  borderWidth,
-  borderColor,
+  width = '200px',
+  bgColor = cdx_config.bgColorPrimary,
+  color = cdx_config.colorPrimary,
+  borderRadius = cdx_config.borderRadius,
+  labelFontSize = cdx_config.fontSizeLabel,
+  textFontSize = cdx_config.fontSizeText,
+  margin = cdx_config.margin,
+  textWidth = '90%',
+  padding = cdx_config.padding,
+  alignItems = 'flex-start',
+  items = [{ label: 'Label', text: 'Text' }],
+  dynamicHeight = true,
+  border = cdx_config.borderSecondary,
 }) => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const contentRefs = useRef<(HTMLParagraphElement | null)[]>([]);
@@ -47,7 +48,7 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
   const getTextHeight = useCallback(
     (index: number) => {
       const ref = contentRefs.current[index];
-      return ref ? `${ref.scrollHeight}px` : "0px";
+      return ref ? `${ref.scrollHeight}px` : '0px';
     },
     [contentRefs]
   );
@@ -63,7 +64,7 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
     contentRefs.current.forEach((ref, index) => {
       if (ref) {
         ref.style.height =
-          expandedIndex === index ? getTextHeight(index) : "0px";
+          expandedIndex === index ? getTextHeight(index) : '0px';
       }
     });
   }, [expandedIndex, getTextHeight]);
@@ -72,17 +73,13 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
     <div
       className="mainDivSimpleAccordion1"
       style={{
-        width: width || "200px",
-        backgroundColor: bgColor || "#7553BB",
-        color: color || "white",
-        borderRadius: borderRadius || "1rem",
-        padding: padding || "0.5rem",
-        margin: margin || "0",
-        border: borderWidth
-          ? `${borderWidth} solid ${borderColor || "#7553BB"}`
-          : borderColor
-          ? `2px solid ${borderColor}`
-          : "2px solid #7553BB",
+        width: width,
+        backgroundColor: bgColor,
+        color: color,
+        borderRadius: borderRadius,
+        padding: padding,
+        margin: margin,
+        border: border,
       }}
     >
       {items?.map((item, index) => {
@@ -91,8 +88,8 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
             key={index}
             className="itemSimpleAccordion1"
             style={{
-              alignItems: alignItems || "flex-start",
-              width: textWidth || "90%",
+              alignItems: alignItems,
+              width: textWidth,
             }}
           >
             <h1
@@ -100,22 +97,25 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
                 handleClick(index);
               }}
               className="labelSimpleAccordion1"
+              style={{
+                fontSize: labelFontSize,
+              }}
             >
               {item.label}
             </h1>
 
             <p
               ref={(el) => (contentRefs.current[index] = el)}
-              className={"textSimpleAccordion1"}
+              className={'textSimpleAccordion1'}
               style={{
                 transition: dynamicHeight
                   ? `height ${calculateTransitionDuration(
                       item.text?.length ?? 0
                     )} ease-in-out`
                   : `height 0.2s ease-in-out`,
-                fontSize: fontSize || "1rem",
+                fontSize: textFontSize,
               }}
-              dangerouslySetInnerHTML={{ __html: item.text ?? "" }}
+              dangerouslySetInnerHTML={{ __html: item.text ?? '' }}
             />
           </div>
         );

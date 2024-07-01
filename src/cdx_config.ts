@@ -1,0 +1,16 @@
+export const cdx_config = {
+  bgColorPrimary: '#7553BB',
+  bgColorSecondary: 'white',
+  borderPrimary: 'none',
+  borderSecondary: '2px solid #7553BB',
+  colorPrimary: 'white',
+  colorSecondary: '#7553BB',
+  fontSizeLabel: '1.5rem',
+  fontSizeText: '1.2rem',
+  borderRadius: '1rem',
+  boxShadow: 'none',
+  padding: '0.5rem 1rem',
+  margin: '0.5rem',
+  transformScale: '1',
+  transitionTime: '0.3s',
+};
