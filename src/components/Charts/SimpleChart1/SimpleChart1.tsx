@@ -43,7 +43,7 @@ const SimpleChart1: React.FC<SimpleChart1Props> = ({
   justifyContent = 'space-between',
   notReachedColor = cdx_config.colorPrimary,
   reachedColor = cdx_config.colorPrimaryDiff,
-  gap,
+  gap = cdx_config.gap,
 }) => {
   return (
     <div
