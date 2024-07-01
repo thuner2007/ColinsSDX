@@ -1,5 +1,6 @@
-import React from 'react';
-import './SimpleDivider1.css';
+import React from "react";
+import "./SimpleDivider1.css";
+import { cdx_config } from "../../../cdx_config.ts";
 
 interface SimpleDivider1Props {
   width?: string;
@@ -12,13 +13,13 @@ interface SimpleDivider1Props {
 }
 
 const SimpleDivider1: React.FC<SimpleDivider1Props> = ({
-  width = '100%',
-  height = '1px',
-  color = 'gray',
-  borderRadius = '1rem',
-  marginTop = '1rem',
-  marginBottom = '1rem',
-  boxShadow = '0px 0px 10px 0px rgba(0,0,0,0.25)',
+  width = `calc(100vw - ${cdx_config.scrollbarWidth})`,
+  height = "1px",
+  color = cdx_config.colorSecondary,
+  borderRadius = cdx_config.borderRadius,
+  marginTop = cdx_config.gap,
+  marginBottom = cdx_config.gap,
+  boxShadow = "none",
 }) => {
   return (
     <hr

@@ -1,14 +1,18 @@
 import React from "react";
 import "./SimpleBigTextInputWithRequired.css";
+import { cdx_config } from "../../../cdx_config.ts";
 
 interface SimpleBigTextInputWithRequiredProps {
-  label: string;
-  required: boolean;
+  label?: string;
+  required?: boolean;
   border?: string;
   borderRadius?: string;
-  backgroundColor?: string;
-  color?: string;
-  fontSize?: string;
+  bgColor?: string;
+  textColor?: string;
+  labelColor?: string;
+  labelFontSize?: string;
+  labelFontWeight?: string;
+  textFontSize?: string;
   padding?: string;
   margin?: string;
   width?: string;
@@ -18,31 +22,46 @@ interface SimpleBigTextInputWithRequiredProps {
   disabled?: boolean;
   isResizeable?: boolean;
   focusBorder?: string;
+  gap?: string;
 }
 
 const SimpleBigTextInputWithRequired: React.FC<
   SimpleBigTextInputWithRequiredProps
 > = ({
-  label,
-  required,
-  border,
-  borderRadius,
-  backgroundColor,
-  color,
-  fontSize,
-  padding,
-  margin,
-  width,
-  height,
-  placeholder,
-  placeholderColor,
-  disabled,
-  isResizeable,
-  focusBorder,
+  label = cdx_config.label,
+  required = false,
+  border = cdx_config.borderPrimary,
+  borderRadius = cdx_config.borderRadius,
+  bgColor = cdx_config.bgColorPrimary,
+  textColor = cdx_config.colorPrimary,
+  labelColor = cdx_config.colorSecondary,
+  labelFontSize = cdx_config.fontSizeLabel,
+  labelFontWeight = "700",
+  textFontSize = cdx_config.fontSizeText,
+  padding = cdx_config.padding,
+  margin = cdx_config.margin,
+  width = "auto",
+  height = "auto",
+  placeholder = "Type here...",
+  placeholderColor = cdx_config.colorPlaceholder,
+  disabled = false,
+  isResizeable = false,
+  focusBorder = "none",
+  gap = "0.5rem",
 }) => {
   return (
-    <div className="mainDivSimpleBigTextInputWithRequired">
-      <label className="labelLabelSimpleBigTextInputWithRequired">
+    <div
+      className="mainDivSimpleBigTextInputWithRequired"
+      style={{ gap: gap, margin: margin }}
+    >
+      <label
+        className="labelLabelSimpleBigTextInputWithRequired"
+        style={{
+          fontSize: labelFontSize,
+          fontWeight: labelFontWeight,
+          color: labelColor,
+        }}
+      >
         {required && (
           <span className="requiredSpanSimpleBigTextInputWithRequired">*</span>
         )}
@@ -52,21 +71,20 @@ const SimpleBigTextInputWithRequired: React.FC<
         className="textareaSimpleBigTextInputWithRequired"
         style={
           {
-            border: border || "1px solid #7553BB",
-            borderRadius: borderRadius || "1rem",
-            backgroundColor: backgroundColor || "#7553BB",
-            color: color || "white",
-            fontSize: fontSize || "1rem",
-            padding: padding || "0.7rem",
-            margin: margin || "0",
-            width: width || "auto",
-            height: height || "auto",
+            border: border,
+            borderRadius: borderRadius,
+            backgroundColor: bgColor,
+            color: textColor,
+            fontSize: textFontSize,
+            padding: padding,
+            width: width,
+            height: height,
             resize: isResizeable ? "both" : "none",
-            "--placeholder-color": placeholderColor || "lightgray",
-            "--focus-border": focusBorder || "none",
+            "--placeholder-color": placeholderColor,
+            "--focus-border": focusBorder,
           } as React.CSSProperties
         }
-        placeholder={placeholder || "Type here..."}
+        placeholder={placeholder}
         disabled={disabled}
       />
     </div>

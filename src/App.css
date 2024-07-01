@@ -1,5 +1,4 @@
 .App {
-  width: calc(100vw - 15px);
   height: fit-content;
 
   display: flex;

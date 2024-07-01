@@ -1,4 +1,5 @@
 import React from "react";
+import { cdx_config } from "../../cdx_config.ts";
 
 interface Props {
   color?: string;
@@ -10,12 +11,12 @@ interface Props {
 }
 
 const SimpleScrollBar: React.FC<Props> = ({
-  color,
-  backGroundColor,
-  width,
-  borderRadius,
-  backGroundShadow,
-  hoverColor,
+  color = cdx_config.bgColorPrimary,
+  backGroundColor = cdx_config.colorPlaceholder,
+  width = `calc(${cdx_config.scrollbarWidth} - 1px)`,
+  borderRadius = cdx_config.borderRadius,
+  backGroundShadow = cdx_config.boxShadow,
+  hoverColor = cdx_config.bgColorPrimary,
 }) => {
   return (
     <div className="mainDivSimpleScrollBar">
@@ -23,24 +24,24 @@ const SimpleScrollBar: React.FC<Props> = ({
         {`
 /* width */
 ::-webkit-scrollbar {
-  width: ${width || "15px"};
+  width: ${width};
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: ${backGroundShadow || "none"};
-  background: ${backGroundColor || "#f1f1f1"};
+  box-shadow: ${backGroundShadow};
+  background: ${backGroundColor};
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: ${color || "#7553BB"}; 
-  border-radius: ${borderRadius || "1rem"};
+  background: ${color}; 
+  border-radius: ${borderRadius};
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: ${hoverColor || "#7553BB"};
+  background: ${hoverColor};
   cursor: pointer; 
 `}
       </style>

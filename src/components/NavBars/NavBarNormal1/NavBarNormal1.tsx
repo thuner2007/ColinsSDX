@@ -1,5 +1,6 @@
 import React from "react";
 import "./NavBarNormal1.css";
+import { cdx_config } from "../../../cdx_config.ts";
 
 interface Item {
   src: string;
@@ -15,6 +16,7 @@ interface NavBarNormal1Props {
   bgColor?: string;
   items?: Item[];
   itemSize?: string;
+  itemMargin?: string;
   bgBlur?: number;
   justifyContent?: JustifyContentOptions;
   calcScrollBar?: string;
@@ -22,24 +24,42 @@ interface NavBarNormal1Props {
 }
 
 const NavBarNormal1: React.FC<NavBarNormal1Props> = ({
-  height,
-  bgColor,
-  items,
-  itemSize,
-  bgBlur,
-  justifyContent,
-  calcScrollBar,
-  borderButtom,
+  height = "50px",
+  bgColor = cdx_config.bgColorPrimary,
+  items = [
+    {
+      src: "https://cwx-icons-web-git-main-thuner2007s-projects.vercel.app/icons/svg/profile_icon/CDX_profile_black_icon1.svg",
+      alt: "profile_icon",
+    },
+    {
+      src: "https://cwx-icons-web-git-main-thuner2007s-projects.vercel.app/icons/svg/save_icon/CWX_save_invisibleWithBorder_icon1_4.svg",
+      alt: "save_icon",
+    },
+    {
+      src: "https://cwx-icons-web-git-main-thuner2007s-projects.vercel.app/icons/svg/search_icon/CWX_search_invisibleWithBorder_icon1.svg",
+      alt: "search_icon",
+    },
+    {
+      src: "https://cwx-icons-web-git-main-thuner2007s-projects.vercel.app/icons/svg/settings_icon/CDX_settings_black_icon1.svg",
+      alt: "settings_icon",
+    },
+  ],
+  itemSize = "35px",
+  itemMargin = "0rem 2rem",
+  bgBlur = 0,
+  justifyContent = "space-between",
+  calcScrollBar = cdx_config.scrollbarWidth,
+  borderButtom = `1px solid ${cdx_config.bgColorPrimary}`,
 }) => {
   return (
     <div
       style={{
         width: `calc(100vw - ${calcScrollBar || "0px"})`,
-        height: height || "50px",
-        backgroundColor: bgColor || "rgba(117, 83, 187, 0.5)",
-        backdropFilter: bgBlur ? `blur(${bgBlur})` : "blur(10px)",
-        justifyContent: justifyContent || "space-between",
-        borderBottom: borderButtom || "1px solid rgba(117, 83, 187, 0.5)",
+        height: height,
+        backgroundColor: bgColor,
+        backdropFilter: `blur(${bgBlur})`,
+        justifyContent: justifyContent,
+        borderBottom: borderButtom,
       }}
       className="mainDivNavBarNormal1"
     >
@@ -53,6 +73,7 @@ const NavBarNormal1: React.FC<NavBarNormal1Props> = ({
               width: itemSize,
               height: itemSize,
               cursor: item.hover ? "default" : undefined,
+              margin: itemMargin,
             }}
             className="itemNavBarNormal1"
             onClick={item.onclick ? item.onclick : () => {}}

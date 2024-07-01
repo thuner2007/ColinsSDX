@@ -1,3 +1,4 @@
+import { cdx_config } from "../../../cdx_config.ts";
 import "./SimpleVerticalDropdown.css";
 
 import React, { useState } from "react";
@@ -13,7 +14,8 @@ interface SimpleVerticalDropdownProps {
   label?: string;
   bgBlur?: string;
   color?: string;
-  fontSize?: string;
+  labelFontSize?: string;
+  textFontSize?: string;
   borderRadius?: string;
   unicodeArrowUp?: string;
   unicodeArrowDown?: string;
@@ -23,23 +25,26 @@ interface SimpleVerticalDropdownProps {
   border?: string;
   margin?: string;
   padding?: string;
+  labelFontWeight?: string;
 }
 
 const SimpleVerticalDropdown: React.FC<SimpleVerticalDropdownProps> = ({
-  width,
-  height,
-  label,
-  borderRadius,
+  width = "auto",
+  height = "auto",
+  label = cdx_config.label,
+  borderRadius = cdx_config.borderRadius,
   unicodeArrowUp,
   unicodeArrowDown,
-  items,
-  bgColor,
-  color,
-  fontSize,
-  boxShadow,
-  border,
-  margin,
-  padding,
+  items = [{ label: "Option 1" }, { label: "Option 2" }, { label: "Option 3" }],
+  bgColor = cdx_config.bgColorPrimary,
+  color = cdx_config.colorPrimary,
+  labelFontSize = cdx_config.fontSizeLabel,
+  textFontSize = cdx_config.fontSizeText,
+  boxShadow = cdx_config.boxShadow,
+  border = cdx_config.borderPrimary,
+  margin = cdx_config.margin,
+  padding = cdx_config.padding,
+  labelFontWeight = cdx_config.labelFontWeight,
 }) => {
   const [isDropped, setIsDropped] = useState(false);
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
@@ -63,21 +68,20 @@ const SimpleVerticalDropdown: React.FC<SimpleVerticalDropdownProps> = ({
     <div
       className="mainDivSimpleVerticalDropdown"
       style={{
-        width: width || "auto",
-        height: height || "auto",
-        margin: margin || "0",
+        width: width,
+        height: height,
+        margin: margin,
       }}
     >
       <button
         className="buttonSimpleVerticalDropdown"
         style={{
-          borderRadius: borderRadius || "1rem",
-          backgroundColor: bgColor || "#7553BB",
-          color: color || "white",
-          fontSize: fontSize || "1rem",
-          boxShadow: boxShadow || "none",
-          border: border || "none",
-          padding: padding || "0.5rem 1rem",
+          borderRadius: borderRadius,
+          backgroundColor: bgColor,
+          color: color,
+          boxShadow: boxShadow,
+          border: border,
+          padding: padding,
         }}
         onClick={() => setIsDropped(!isDropped)}
         onFocus={handleFocus}
@@ -85,13 +89,13 @@ const SimpleVerticalDropdown: React.FC<SimpleVerticalDropdownProps> = ({
       >
         <h1
           className="labelSimpleVerticalDropdown"
-          style={{ fontSize: fontSize || "1.2rem" }}
+          style={{ fontSize: labelFontSize, fontWeight: labelFontWeight }}
         >
-          {label || "label"}
+          {label}
         </h1>
         <p
           className="droppedArrowsSimpleVerticalDropdown"
-          style={{ color: color || "white" }}
+          style={{ color: color, fontSize: labelFontSize }}
         >
           {isDropped
             ? unicodeArrowUp
@@ -109,9 +113,9 @@ const SimpleVerticalDropdown: React.FC<SimpleVerticalDropdownProps> = ({
             position: "absolute",
             top: "calc(100% + 1rem)",
             left: "0",
-            borderRadius: borderRadius || "1rem",
-            boxShadow: boxShadow || "none",
-            border: border || "none",
+            borderRadius: borderRadius,
+            boxShadow: boxShadow,
+            border: border,
           }}
         >
           {items &&
@@ -121,10 +125,10 @@ const SimpleVerticalDropdown: React.FC<SimpleVerticalDropdownProps> = ({
                   className="buttonOptionSimpleVerticalDropdown"
                   onClick={item.onClick ? item.onClick : () => {}}
                   style={{
-                    backgroundColor: bgColor || "#7553BB",
-                    color: color || "white",
-                    fontSize: fontSize || "1rem",
-                    padding: padding || "0.5rem 1rem",
+                    backgroundColor: bgColor,
+                    color: color,
+                    fontSize: textFontSize,
+                    padding: padding,
                   }}
                 >
                   {item.label || "Option " + index}

@@ -1,5 +1,6 @@
 import React from "react";
 import "./SimpleLoader1.css";
+import { cdx_config } from "../../../cdx_config.ts";
 
 interface SimpleLoader1Prop {
   color?: string;
@@ -8,7 +9,7 @@ interface SimpleLoader1Prop {
 }
 
 const SimpleLoader1: React.FC<SimpleLoader1Prop> = ({
-  color,
+  color = cdx_config.bgColorPrimary,
   size = 100,
   width = 4,
 }) => {
@@ -16,7 +17,7 @@ const SimpleLoader1: React.FC<SimpleLoader1Prop> = ({
     <div
       className="mainDivSimpleLoader1"
       style={{
-        boxShadow: `0 ${width}px 0 ${color || "black"} inset`,
+        boxShadow: `0 ${width}px 0 ${color} inset`,
         width: size + "px",
         height: size + "px",
       }}

@@ -1,10 +1,12 @@
 import React from "react";
 import "./SimpleFooter1.css";
+import { cdx_config } from "../../../cdx_config.ts";
 
 interface SimpleFooter1Props {
   bgColor?: string;
   color?: string;
-  padding?: string;
+  paddingTop?: string;
+  paddingBottom?: string;
   rows?: {
     label: string;
     items: { label: string; onClick?: () => void }[];
@@ -15,12 +17,15 @@ interface SimpleFooter1Props {
   gap?: string;
   textMargin?: string;
   itemUnderline?: "none" | "underline";
+  labelFontSize?: string;
+  textFontSize?: string;
 }
 
 const SimpleFooter1: React.FC<SimpleFooter1Props> = ({
-  bgColor = "#7553BB",
-  color = "white",
-  padding = "2rem",
+  bgColor = cdx_config.bgColorPrimary,
+  color = cdx_config.colorPrimary,
+  paddingBottom = "1rem",
+  paddingTop = "1rem",
   rows = [
     {
       label: "Legals",
@@ -51,11 +56,13 @@ const SimpleFooter1: React.FC<SimpleFooter1Props> = ({
     },
   ],
   alignItems = "center",
-  borderTop = "1px solid purple",
+  borderTop = cdx_config.borderPrimary,
   alignRows = "center",
-  gap = "2rem",
+  gap = cdx_config.gap,
   textMargin = "1rem",
   itemUnderline = "underline",
+  labelFontSize = cdx_config.fontSizeLabel,
+  textFontSize = "1rem",
 }) => {
   return (
     <div
@@ -63,10 +70,11 @@ const SimpleFooter1: React.FC<SimpleFooter1Props> = ({
       style={{
         backgroundColor: bgColor,
         color: color,
-        padding: padding,
         alignItems: alignRows,
-        width: `calc(100% - ${padding} - ${padding})`,
+        width: "100%",
         borderTop: borderTop,
+        paddingTop: paddingTop,
+        paddingBottom: paddingBottom,
       }}
     >
       <div className="parentDivRowsSimpleFooter1" style={{ gap: gap }}>
@@ -76,11 +84,20 @@ const SimpleFooter1: React.FC<SimpleFooter1Props> = ({
             className="rowSimpleFooter1"
             style={{ alignItems: alignItems }}
           >
-            <h1 className="rowLabelSimpleFooter1">{row.label}</h1>
+            <h1
+              className="rowLabelSimpleFooter1"
+              style={{ fontSize: labelFontSize }}
+            >
+              {row.label}
+            </h1>
             {row.items.map((item, index) => (
               <p
                 className="itemSimpleFooter1"
-                style={{ margin: textMargin, textDecoration: itemUnderline }}
+                style={{
+                  margin: textMargin,
+                  textDecoration: itemUnderline,
+                  fontSize: textFontSize,
+                }}
                 key={index}
                 onClick={item.onClick}
               >

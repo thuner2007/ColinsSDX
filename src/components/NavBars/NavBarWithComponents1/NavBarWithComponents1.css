@@ -10,10 +10,6 @@
 
 .itemNavBarWithComponents1 {
   height: 100%;
-  margin-left: 10px;
-  margin-right: 10px;
-
-  cursor: pointer;
 
   display: flex;
   justify-content: center;
