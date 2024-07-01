@@ -3,23 +3,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .labelSimpleAccordion1 {
-  width: 100%;
-  text-align: center;
   padding: 0;
   margin: 0;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
+
   cursor: pointer;
 }
 
 .itemSimpleAccordion1 {
   display: flex;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
+  justify-content: center;
 }
 
 .textSimpleAccordion1 {

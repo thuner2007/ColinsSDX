@@ -1,5 +1,6 @@
-import React from "react";
-import "./SimpleChart1.css";
+import React from 'react';
+import './SimpleChart1.css';
+import { cdx_config } from '../../../cdx_config.ts';
 
 interface SimpleChart1Props {
   label?: string;
@@ -15,85 +16,73 @@ interface SimpleChart1Props {
   textFontSize?: string;
   margin?: string;
   padding?: string;
-  borderWidth?: string;
-  borderColor?: string;
-  alignItems?: "space-between" | "center" | "flex-start" | "flex-end";
-  justifyContent?: "space-between" | "center" | "flex-start" | "flex-end";
+  border?: string;
+  alignItems?: 'space-between' | 'center' | 'flex-start' | 'flex-end';
+  justifyContent?: 'space-between' | 'center' | 'flex-start' | 'flex-end';
   notReachedColor?: string;
   reachedColor?: string;
   gap?: string;
 }
 
 const SimpleChart1: React.FC<SimpleChart1Props> = ({
-  label,
-  percentage,
+  label = cdx_config.label,
+  percentage = 33,
   text,
-  chartHeight,
-  width,
-  height,
-  bgColor,
-  borderRadius,
-  borderColor,
-  borderWidth,
-  color,
-  labelFontSize,
-  textFontSize,
-  margin,
-  padding,
-  alignItems,
-  justifyContent,
-  notReachedColor,
-  reachedColor,
+  chartHeight = '20px',
+  width = '500px',
+  height = 'auto',
+  bgColor = cdx_config.bgColorPrimary,
+  borderRadius = cdx_config.borderRadius,
+  border = cdx_config.borderPrimary,
+  color = cdx_config.colorPrimary,
+  labelFontSize = cdx_config.fontSizeLabel,
+  textFontSize = cdx_config.fontSizeText,
+  margin = cdx_config.margin,
+  padding = cdx_config.padding,
+  alignItems = 'center',
+  justifyContent = 'space-between',
+  notReachedColor = cdx_config.colorPrimary,
+  reachedColor = cdx_config.colorPrimaryDiff,
   gap,
 }) => {
   return (
     <div
       className="mainDivSimpleChart1"
       style={{
-        gap: gap || "1rem",
-        height: height || "auto",
-        width: width || "500px",
-        border: borderWidth
-          ? `${borderWidth} solid ${borderColor || "#7553BB"}`
-          : borderColor
-          ? `2px solid ${borderColor}`
-          : "2px solid #7553BB",
-        borderRadius: borderRadius || "1rem",
-        backgroundColor: bgColor || "#7553BB",
-        color: color || "white",
-        margin: margin || "0",
-        padding: padding || "0.8rem",
-        alignItems: alignItems || "center",
-        justifyContent: justifyContent || "space-between",
+        gap: gap,
+        height: height,
+        width: width,
+        border: border,
+        borderRadius: borderRadius,
+        backgroundColor: bgColor,
+        color: color,
+        margin: margin,
+        padding: padding,
+        alignItems: alignItems,
+        justifyContent: justifyContent,
       }}
     >
-      <p
-        style={{ fontSize: labelFontSize || "1.5rem" }}
-        className="labelSimpleChart1"
-      >
-        {label || "Label"}
+      <p style={{ fontSize: labelFontSize }} className="labelSimpleChart1">
+        {label || 'Label'}
       </p>
       <div
         className="parentSliderDivSimpleChart1"
         style={{
-          backgroundColor: notReachedColor ? notReachedColor : "white",
-          height: chartHeight ? chartHeight : "20px",
-          borderRadius: borderRadius ? borderRadius : "1rem",
+          backgroundColor: notReachedColor,
+          height: chartHeight,
+          borderRadius: borderRadius,
         }}
       >
         <div
           className="sliderDivSimpleChart1"
           style={{
             width: `${percentage}%`,
-            backgroundColor: reachedColor ? reachedColor : "black",
+            backgroundColor: reachedColor,
           }}
         ></div>
       </div>
       {text && (
-        <p
-          className="textSimpleChart1"
-          style={{ fontSize: textFontSize || "1rem" }}
-        >
+        <p className="textSimpleChart1" style={{ fontSize: textFontSize }}>
           {text}
         </p>
       )}

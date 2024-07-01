@@ -16,27 +16,27 @@ interface SimpleAccordion1Props {
   labelFontSize?: string;
   textFontSize?: string;
   margin?: string;
-  textWidth?: string;
   padding?: string;
   alignItems?: 'center' | 'flex-start' | 'flex-end' | 'space-between';
   dynamicHeight?: boolean;
   border?: string;
+  labelFontWeight?: string;
 }
 
 const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
-  width = '200px',
+  width = 'auto',
   bgColor = cdx_config.bgColorPrimary,
   color = cdx_config.colorPrimary,
   borderRadius = cdx_config.borderRadius,
   labelFontSize = cdx_config.fontSizeLabel,
   textFontSize = cdx_config.fontSizeText,
   margin = cdx_config.margin,
-  textWidth = '90%',
   padding = cdx_config.padding,
   alignItems = 'flex-start',
-  items = [{ label: 'Label', text: 'Text' }],
+  items = [{ label: cdx_config.label, text: 'Text' }],
   dynamicHeight = true,
   border = cdx_config.borderSecondary,
+  labelFontWeight = cdx_config.labelFontWeight,
 }) => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const contentRefs = useRef<(HTMLParagraphElement | null)[]>([]);
@@ -84,14 +84,7 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
     >
       {items?.map((item, index) => {
         return (
-          <div
-            key={index}
-            className="itemSimpleAccordion1"
-            style={{
-              alignItems: alignItems,
-              width: textWidth,
-            }}
-          >
+          <div key={index} className="itemSimpleAccordion1">
             <h1
               onClick={() => {
                 handleClick(index);
@@ -99,6 +92,7 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
               className="labelSimpleAccordion1"
               style={{
                 fontSize: labelFontSize,
+                fontWeight: labelFontWeight,
               }}
             >
               {item.label}
@@ -114,6 +108,7 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
                     )} ease-in-out`
                   : `height 0.2s ease-in-out`,
                 fontSize: textFontSize,
+                alignSelf: alignItems,
               }}
               dangerouslySetInnerHTML={{ __html: item.text ?? '' }}
             />

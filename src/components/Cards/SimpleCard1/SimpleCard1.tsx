@@ -1,5 +1,6 @@
 import React from 'react';
 import './SimpleCard1.css';
+import { cdx_config } from '../../../cdx_config.ts';
 
 interface SimpleCard1Props {
   label?: string;
@@ -10,7 +11,9 @@ interface SimpleCard1Props {
   color?: string;
   border?: string;
   borderRadius?: string;
-  fontSize?: string;
+  textFontSize?: string;
+  labelFontSize?: string;
+  labelFontWeight?: string;
   alignItems?: 'center' | 'flex-start' | 'flex-end';
   maxWidth?: string;
   gap?: string;
@@ -23,17 +26,18 @@ const SimpleCard1: React.FC<SimpleCard1Props> = ({
     'Hello, this </br> is the first paragraph',
     'Hello, this is the second paragraph',
   ],
-  margin = '0px',
-  padding = '1rem',
+  margin = cdx_config.margin,
+  padding = cdx_config.padding,
   bgColor = '#7553BB',
-  color = 'white',
-  border = '1px solid #7553BB',
-  borderRadius = '1rem',
-  fontSize = '1.2rem',
+  color = cdx_config.colorPrimary,
+  border = cdx_config.borderPrimary,
+  borderRadius = cdx_config.borderRadius,
+  textFontSize = cdx_config.fontSizeText,
+  labelFontSize = cdx_config.fontSizeLabel,
   alignItems = 'flex-start',
-  maxWidth = '300px',
-  gap = '1.5rem',
-  boxShadow = 'none',
+  gap = cdx_config.gap,
+  boxShadow = cdx_config.boxShadow,
+  labelFontWeight = cdx_config.labelFontWeight,
 }) => {
   return (
     <div
@@ -46,19 +50,23 @@ const SimpleCard1: React.FC<SimpleCard1Props> = ({
         color: color,
         border: border,
         borderRadius: borderRadius,
-        maxWidth: maxWidth,
         gap: gap,
         boxShadow: boxShadow,
       }}
     >
-      <h1 className="labelSimpleCard1">{label}</h1>
+      <h1
+        className="labelSimpleCard1"
+        style={{ fontSize: labelFontSize, fontWeight: labelFontWeight }}
+      >
+        {label}
+      </h1>
       {text.map((item, index) => {
         return (
           <p
             key={index}
             className="textSimpleCard1"
             style={{
-              fontSize: fontSize,
+              fontSize: textFontSize,
             }}
             dangerouslySetInnerHTML={{ __html: item }}
           />

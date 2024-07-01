@@ -1,5 +1,6 @@
 import React from 'react';
 import './SimpleSecondaryButton1.css';
+import { cdx_config } from '../../../cdx_config.ts';
 
 interface SimpleSecondaryButton1Props {
   label?: string;
@@ -22,20 +23,20 @@ interface SimpleSecondaryButton1Props {
 
 const SimpleSecondaryButton1: React.FC<SimpleSecondaryButton1Props> = ({
   label = 'Click me!',
-  width = '200px',
-  height = '50px',
-  bgColor = 'white',
-  borderRadius = '1rem',
+  width = 'auto',
+  height = 'auto',
+  bgColor = cdx_config.bgColorSecondary,
+  borderRadius = cdx_config.borderRadius,
   hoverBgColor = 'white',
-  color = '#7553BB',
-  transformScale = 1,
-  transitionTime = '0.3s',
-  fontSize = '1.5rem',
-  boxShadow = 'none',
+  color = cdx_config.colorSecondary,
+  transformScale = cdx_config.transformScale,
+  transitionTime = cdx_config.transitionTime,
+  fontSize = cdx_config.fontSizeLabel,
+  boxShadow = cdx_config.boxShadow,
   willChange = false,
-  border = '2px solid #7553BB',
-  margin = '0.5rem',
-  padding = '0',
+  border = cdx_config.borderSecondary,
+  margin = cdx_config.margin,
+  padding = cdx_config.padding,
   onClick,
 }) => {
   return (

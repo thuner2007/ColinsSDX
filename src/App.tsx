@@ -19,6 +19,7 @@ import SimpleLoader1 from './components/Loaders/SimpleLoader1/SimpleLoader1.tsx'
 import SimpleSecondaryButton1 from './components/Buttons/SimpleSecondaryButton1/SimpleSecondaryButton1.tsx';
 import HtmlSimpleBackground1 from './components/Backgrounds/HtmlSimpleBackground1/HtmlSimpleBackground1.tsx';
 import BodySimpleBackground1 from './components/Backgrounds/BodySimpleBackground1/BodySimpleBackground1.tsx';
+import SimplePrimaryButton1 from './components/Buttons/SimplePrimaryButton1/SimplePrimaryButton1.tsx';
 function App() {
   const [show, setShow] = useState(false);
   const consoleLogHey = () => {
@@ -35,7 +36,11 @@ function App() {
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>
+      <SimplePrimaryButton1 />
+      <SimpleSecondaryButton1 />
       <SimpleAccordion1 />
+      <SimpleCard1 />
+      <SimpleChart1 percentage={33} />
       <h1>TEST</h1>
       <h1>TEST</h1>
       <h1>TEST</h1>

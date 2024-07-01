@@ -1,7 +1,7 @@
 export const cdx_config = {
   bgColorPrimary: '#7553BB',
   bgColorSecondary: 'white',
-  borderPrimary: 'none',
+  borderPrimary: '2px solid #7553BB',
   borderSecondary: '2px solid #7553BB',
   colorPrimary: 'white',
   colorSecondary: '#7553BB',
@@ -9,8 +9,12 @@ export const cdx_config = {
   fontSizeText: '1.2rem',
   borderRadius: '1rem',
   boxShadow: 'none',
-  padding: '0.5rem 1rem',
+  padding: '1rem 2rem',
   margin: '0.5rem',
   transformScale: '1',
   transitionTime: '0.3s',
+  label: 'Label',
+  gap: '1.5rem',
+  labelFontWeight: '500',
+  colorPrimaryDiff: '#321a66',
 };
