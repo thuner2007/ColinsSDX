@@ -1,0 +1,47 @@
+.mainDivSimpleTable1 {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.labelSimpleTable1 {
+  margin: 0;
+  padding: 0;
+}
+
+.tableSimpleTable1 {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.thSimpleTable1,
+.tdSimpleTable1 {
+  padding: 8px;
+  text-align: center;
+}
+
+.thSimpleTable1 {
+  padding: 0;
+  margin: 0;
+}
+
+.tdSimpleTable1 {
+  padding: 0;
+  margin: 0;
+}
+
+.tableItemWithDots {
+  list-style-type: disc;
+  padding: 0;
+  margin: 0;
+}
+
+.tableItemNoDots {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
