@@ -12,8 +12,6 @@ interface SimpleSecondaryButton1Props {
   color?: string;
   fontSize?: string;
   hoverBgColor?: string;
-  transformScale?: number;
-  transitionTime?: string;
   border?: string;
   margin?: string;
   padding?: string;
@@ -29,8 +27,6 @@ const SimpleSecondaryButton1: React.FC<SimpleSecondaryButton1Props> = ({
   borderRadius = cdx_config.borderRadius,
   hoverBgColor = 'white',
   color = cdx_config.colorSecondary,
-  transformScale = cdx_config.transformScale,
-  transitionTime = cdx_config.transitionTime,
   fontSize = cdx_config.fontSizeLabel,
   boxShadow = cdx_config.boxShadow,
   willChange = false,
@@ -52,14 +48,12 @@ const SimpleSecondaryButton1: React.FC<SimpleSecondaryButton1Props> = ({
           backgroundColor: bgColor,
           color: color,
           boxShadow: boxShadow,
-          transition: `all ${transitionTime || '0.3s'} ease`,
           fontSize: fontSize,
           margin: margin,
           padding: padding,
         }}
         onClick={onClick ? onClick : () => console.log('Button clicked!')}
         onMouseEnter={(e) => {
-          e.currentTarget.style.transform = `scale(${transformScale || 1})`;
           e.currentTarget.style.backgroundColor = hoverBgColor;
         }}
         onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}

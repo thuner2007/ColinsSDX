@@ -1,8 +1,8 @@
 import React from 'react';
-import './SimplePrimaryButton1.css';
+import './ZoomPrimaryButton1.css';
 import { cdx_config } from '../../../cdx_config.ts';
 
-interface SimplePrimaryButton1Props {
+interface ZoomPrimaryButton1Props {
   label?: string;
   width?: string;
   height?: string;
@@ -17,9 +17,12 @@ interface SimplePrimaryButton1Props {
   padding?: string;
   onClick?: () => void;
   willChange?: boolean;
+  animation?: 'zoom-in' | 'zoom-out';
+  transitionTime?: string;
+  transitionStrength?: number;
 }
 
-const SimplePrimaryButton1: React.FC<SimplePrimaryButton1Props> = ({
+const ZoomPrimaryButton1: React.FC<ZoomPrimaryButton1Props> = ({
   label = 'Click me!',
   width = 'auto',
   height = 'auto',
@@ -33,12 +36,15 @@ const SimplePrimaryButton1: React.FC<SimplePrimaryButton1Props> = ({
   border = cdx_config.borderPrimary,
   margin = cdx_config.margin,
   padding = cdx_config.padding,
+  animation = 'zoom-in',
+  transitionTime = cdx_config.transitionTime,
+  transitionStrength = 1.1,
   onClick,
 }) => {
   return (
     <>
       <button
-        className="mainSimplePrimaryButton1"
+        className="mainZoomPrimaryButton1"
         style={{
           willChange: willChange ? 'transform' : 'auto',
           border: border,
@@ -51,10 +57,23 @@ const SimplePrimaryButton1: React.FC<SimplePrimaryButton1Props> = ({
           fontSize: fontSize,
           margin: margin,
           padding: padding,
+          transition: `all ${transitionTime}`,
         }}
         onClick={onClick ? onClick : () => console.log('Button clicked!')}
         onMouseEnter={(e) => {
           e.currentTarget.style.backgroundColor = hoverBgColor;
+          switch (animation) {
+            case 'zoom-in':
+              e.currentTarget.style.transform = `scale(${transitionStrength})`;
+              break;
+            case 'zoom-out':
+              e.currentTarget.style.transform = `scale(${
+                1 / transitionStrength
+              })`;
+              break;
+            default:
+              break;
+          }
         }}
         onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
       >
@@ -64,4 +83,4 @@ const SimplePrimaryButton1: React.FC<SimplePrimaryButton1Props> = ({
   );
 };
 
-export default SimplePrimaryButton1;
+export default ZoomPrimaryButton1;

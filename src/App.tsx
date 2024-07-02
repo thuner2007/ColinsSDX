@@ -22,6 +22,9 @@ import BodySimpleBackground1 from './components/Backgrounds/BodySimpleBackground
 import SimplePrimaryButton1 from './components/Buttons/SimplePrimaryButton1/SimplePrimaryButton1.tsx';
 import { cdx_config } from './cdx_config.ts';
 import SimpleTable1 from './components/Tables/SimpleTable1/SimpleTable1.tsx';
+import SimpleDividerWithLabel1 from './components/Dividers/SimpleDividerWithLabel1/SimpleDividerWithLabel1.tsx';
+import ZoomPrimaryButton1 from './components/Buttons/ZoomPrimaryButton1/ZoomPrimaryButton1.tsx';
+import DreiDPrimaryButton1 from './components/Buttons/DreiDPrimaryButton1/DreiDPrimaryButton1.tsx';
 function App() {
   const [show, setShow] = useState(false);
   const consoleLogHey = () => {
@@ -39,6 +42,8 @@ function App() {
         <h1 style={{ color: 'white' }}>Welcome to CDX!</h1>{' '}
       </NavBarWithComponents1>
       <SimplePrimaryButton1 label="Primary" />
+      <ZoomPrimaryButton1 label="Zoom Primary" />
+      <DreiDPrimaryButton1 label="3D Primary" />
       <SimpleSecondaryButton1 label="Secondary" />
       <SimpleAccordion1
         items={[
@@ -60,6 +65,7 @@ function App() {
       <SimpleChart1 percentage={33} label="Chart" text="This is a text..." />
       <SimpleCheckbox1 label="Checkbox" />
       <SimpleDivider1 />
+      <SimpleDividerWithLabel1 label="Divider with Label" />
       <SimpleLoader1 />
       <SimpleVerticalDropdown label="Dropdown" />
       <SimpleBigTextInputWithRequired label="Long Textinput" />

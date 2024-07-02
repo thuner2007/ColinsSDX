@@ -1,44 +1,47 @@
-import React from 'react';
-import './SimplePrimaryButton1.css';
+import React, { useState } from 'react';
+import './DreiDPrimaryButton1.css';
 import { cdx_config } from '../../../cdx_config.ts';
 
-interface SimplePrimaryButton1Props {
+interface DreiDPrimaryButton1Props {
   label?: string;
   width?: string;
   height?: string;
   bgColor?: string;
   borderRadius?: string;
-  boxShadow?: string;
   color?: string;
   fontSize?: string;
-  hoverBgColor?: string;
   border?: string;
   margin?: string;
   padding?: string;
   onClick?: () => void;
   willChange?: boolean;
+  transitionTime?: string;
+  DDDcolor?: string;
+  boxShadow?: string;
 }
 
-const SimplePrimaryButton1: React.FC<SimplePrimaryButton1Props> = ({
+const DreiDPrimaryButton1: React.FC<DreiDPrimaryButton1Props> = ({
   label = 'Click me!',
   width = 'auto',
   height = 'auto',
   bgColor = cdx_config.bgColorPrimary,
   borderRadius = cdx_config.borderRadius,
-  hoverBgColor = '#7553BB',
   color = cdx_config.colorPrimary,
   fontSize = cdx_config.fontSizeLabel,
-  boxShadow = cdx_config.boxShadow,
   willChange = false,
   border = cdx_config.borderPrimary,
   margin = cdx_config.margin,
   padding = cdx_config.padding,
+  transitionTime = cdx_config.transitionTime,
+  DDDcolor = cdx_config.DDDcolor,
+  boxShadow = '0px 8px 10px 0px rgba(0, 0, 0, 0.7)',
   onClick,
 }) => {
+  const [isClicked, setIsClicked] = useState(false);
   return (
     <>
       <button
-        className="mainSimplePrimaryButton1"
+        className="mainDreiDPrimaryButton1"
         style={{
           willChange: willChange ? 'transform' : 'auto',
           border: border,
@@ -47,16 +50,27 @@ const SimplePrimaryButton1: React.FC<SimplePrimaryButton1Props> = ({
           height: height,
           backgroundColor: bgColor,
           color: color,
-          boxShadow: boxShadow,
           fontSize: fontSize,
           margin: margin,
           padding: padding,
+          transition: `all ${transitionTime}`,
+          boxShadow: !isClicked
+            ? `0px 8px 0 ${DDDcolor}, ${boxShadow}`
+            : 'none',
+          transform: isClicked ? 'translateY(4px)' : 'none',
         }}
-        onClick={onClick ? onClick : () => console.log('Button clicked!')}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = hoverBgColor;
+        onClick={
+          onClick ? onClick : () => console.log('You clicked the button!')
+        }
+        onMouseDown={() => {
+          setIsClicked(true);
         }}
-        onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+        onMouseUp={() => {
+          setIsClicked(false);
+        }}
+        onMouseLeave={() => {
+          setIsClicked(false);
+        }}
       >
         {label}
       </button>
@@ -64,4 +78,4 @@ const SimplePrimaryButton1: React.FC<SimplePrimaryButton1Props> = ({
   );
 };
 
-export default SimplePrimaryButton1;
+export default DreiDPrimaryButton1;
