@@ -25,6 +25,7 @@ import SimpleTable1 from './components/Tables/SimpleTable1/SimpleTable1.tsx';
 import SimpleDividerWithLabel1 from './components/Dividers/SimpleDividerWithLabel1/SimpleDividerWithLabel1.tsx';
 import ZoomPrimaryButton1 from './components/Buttons/ZoomPrimaryButton1/ZoomPrimaryButton1.tsx';
 import DreiDPrimaryButton1 from './components/Buttons/DreiDPrimaryButton1/DreiDPrimaryButton1.tsx';
+import SimpleToggle1 from './components/Toggles/SimpleToggle1/SimpleToggle1.tsx';
 function App() {
   const [show, setShow] = useState(false);
   const consoleLogHey = () => {
@@ -71,6 +72,7 @@ function App() {
       <SimpleBigTextInputWithRequired label="Long Textinput" />
       <SimpleInputWithRequired label="Textinput" />
       <SimpleTable1 label="Table" />
+      <SimpleToggle1 />
       <br />
       <br />
       <br />

@@ -1,0 +1,18 @@
+.mainDivSimpleToggle1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonSimpleToggle1 {
+  background-color: #ccc;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-circle {
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
