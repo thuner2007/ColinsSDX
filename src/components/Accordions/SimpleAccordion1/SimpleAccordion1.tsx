@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import "./SimpleAccordion1.css";
-import { cdx_config } from "../../../cdx_config.ts";
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import './SimpleAccordion1.css';
+import { cdx_config } from '../../../cdx_config.ts';
 
 interface Item {
   label?: string;
@@ -17,7 +17,7 @@ interface SimpleAccordion1Props {
   textFontSize?: string;
   margin?: string;
   padding?: string;
-  alignItems?: "center" | "flex-start" | "flex-end" | "space-between";
+  alignItems?: 'center' | 'flex-start' | 'flex-end' | 'space-between';
   dynamicHeight?: boolean;
   border?: string;
   labelFontWeight?: string;
@@ -25,7 +25,7 @@ interface SimpleAccordion1Props {
 }
 
 const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
-  width = "auto",
+  width = 'auto',
   bgColor = cdx_config.bgColorPrimary,
   color = cdx_config.colorPrimary,
   borderRadius = cdx_config.borderRadius,
@@ -33,12 +33,12 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
   textFontSize = cdx_config.fontSizeText,
   margin = cdx_config.margin,
   padding = cdx_config.padding,
-  alignItems = "flex-start",
-  items = [{ label: cdx_config.label, text: "Text" }],
-  dynamicHeight = true,
+  alignItems = 'flex-start',
+  items = [{ label: cdx_config.label, text: 'Text' }],
+  dynamicHeight = false,
   border = cdx_config.borderSecondary,
   labelFontWeight = cdx_config.labelFontWeight,
-  gap = "0.5rem",
+  gap = '0.5rem',
 }) => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const contentRefs = useRef<(HTMLParagraphElement | null)[]>([]);
@@ -50,7 +50,7 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
   const getTextHeight = useCallback(
     (index: number) => {
       const ref = contentRefs.current[index];
-      return ref ? `${ref.scrollHeight}px` : "0px";
+      return ref ? `${ref.scrollHeight}px` : '0px';
     },
     [contentRefs]
   );
@@ -66,7 +66,7 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
     contentRefs.current.forEach((ref, index) => {
       if (ref) {
         ref.style.height =
-          expandedIndex === index ? getTextHeight(index) : "0px";
+          expandedIndex === index ? getTextHeight(index) : '0px';
       }
     });
   }, [expandedIndex, getTextHeight]);
@@ -103,7 +103,7 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
 
             <p
               ref={(el) => (contentRefs.current[index] = el)}
-              className={"textSimpleAccordion1"}
+              className={'textSimpleAccordion1'}
               style={{
                 transition: dynamicHeight
                   ? `height ${calculateTransitionDuration(
@@ -113,7 +113,7 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
                 fontSize: textFontSize,
                 alignSelf: alignItems,
               }}
-              dangerouslySetInnerHTML={{ __html: item.text ?? "" }}
+              dangerouslySetInnerHTML={{ __html: item.text ?? '' }}
             />
           </div>
         );
