@@ -41,6 +41,8 @@
 
   margin: 0;
   padding: 0;
+
+  cursor: pointer;
 }
 
 .inputSimpleCheckbox1:checked::after {

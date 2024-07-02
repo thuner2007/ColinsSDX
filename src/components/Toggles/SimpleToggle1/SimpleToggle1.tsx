@@ -22,15 +22,19 @@ const SimpleToggle1: React.FC<SimpleToggle1Props> = ({
   height = '30px',
   isToggled = false,
   transitionTime = cdx_config.transitionTime,
-  borderRadius = cdx_config.borderRadius,
+  borderRadius = '2rem',
   border = 'none',
 }) => {
   const elementRef = useRef<HTMLDivElement>(null);
+
   const [parentWidth, setParentWidth] = useState(0);
+  const [parentHeight, setParentHeight] = useState(0);
+
   const [isOn, setIsOn] = useState(isToggled);
 
   useEffect(() => {
     if (elementRef.current) {
+      setParentHeight(elementRef.current.offsetHeight);
       setParentWidth(elementRef.current.offsetWidth);
     }
   }, []);
@@ -58,10 +62,10 @@ const SimpleToggle1: React.FC<SimpleToggle1Props> = ({
           style={{
             backgroundColor: bgColorSecondary,
             transform: isOn
-              ? `translateX(${parentWidth / 2}px)`
+              ? `translateX(${parentWidth - parentHeight}px)`
               : 'translateX(0px)',
-            width: parentWidth / 2 - 2,
-            height: parentWidth / 2 - 2,
+            width: parentHeight - 2,
+            height: parentHeight - 2,
             transition: `transform ${transitionTime}`,
           }}
         ></div>

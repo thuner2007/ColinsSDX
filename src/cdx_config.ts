@@ -18,7 +18,7 @@ export const cdx_config = {
   label: 'Label',
   gap: '1.5rem',
   labelFontWeight: '500',
-  colorPrimaryDiff: '#210c4d',
+  colorPrimaryDiff: '#0e0226',
   scrollbarWidth: '17px',
   DDDcolor: '#5a33ab',
 };

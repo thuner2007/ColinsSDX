@@ -69,7 +69,10 @@ function App() {
       <SimpleDividerWithLabel1 label="Divider with Label" />
       <SimpleLoader1 />
       <SimpleVerticalDropdown label="Dropdown" />
-      <SimpleBigTextInputWithRequired label="Long Textinput" />
+      <SimpleBigTextInputWithRequired
+        label="Long Textinput"
+        resizeable={true}
+      />
       <SimpleInputWithRequired label="Textinput" />
       <SimpleTable1 label="Table" />
       <SimpleToggle1 />
