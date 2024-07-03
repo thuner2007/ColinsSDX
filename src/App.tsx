@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 
 import SimpleAccordion1 from "./components/Accordions/SimpleAccordion1/SimpleAccordion1.tsx";
@@ -22,10 +22,6 @@ import ZoomPrimaryButton1 from "./components/Buttons/ZoomPrimaryButton1/ZoomPrim
 import DreiDPrimaryButton1 from "./components/Buttons/DreiDPrimaryButton1/DreiDPrimaryButton1.tsx";
 import SimpleToggle1 from "./components/Toggles/SimpleToggle1/SimpleToggle1.tsx";
 function App() {
-  const [show, setShow] = useState(false);
-  const consoleLogHey = () => {
-    console.log("Hey!");
-  };
   return (
     <div
       className="App"
