@@ -10,8 +10,6 @@
 
   display: flex;
   flex-direction: row;
-
-  /* overflow: hidden; */
 }
 
 .reachedDDDChart1 .notReachedDDDChart1 {

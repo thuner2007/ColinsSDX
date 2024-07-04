@@ -20,9 +20,10 @@ interface DDDChart1Props {
   alignItems?: 'space-between' | 'center' | 'flex-start' | 'flex-end';
   justifyContent?: 'space-between' | 'center' | 'flex-start' | 'flex-end';
   notReachedColor?: string;
+  notReachedColorDDD?: string;
   reachedColor?: string;
+  reachedColorDDD?: string;
   gap?: string;
-  DDDcolor: string;
 }
 
 const DDDChart1: React.FC<DDDChart1Props> = ({
@@ -43,38 +44,11 @@ const DDDChart1: React.FC<DDDChart1Props> = ({
   alignItems = 'flex-start',
   justifyContent = 'space-between',
   notReachedColor = cdx_config.colorPrimary,
+  notReachedColorDDD = cdx_config.colorPrimaryDDD,
   reachedColor = cdx_config.colorPrimaryDiff,
+  reachedColorDDD = cdx_config.colorPrimaryDiffDDD,
   gap = cdx_config.gap,
-  DDDcolor = cdx_config.DDDcolor,
 }) => {
-  const adjustColor = (colorStr) => {
-    // Convert hex color to RGB
-    let r = parseInt(colorStr.slice(1, 3), 16);
-    let g = parseInt(colorStr.slice(3, 5), 16);
-    let b = parseInt(colorStr.slice(5, 7), 16);
-
-    if (r > 230 || g > 230 || b > 230) {
-      // Darken the color by reducing RGB values by 20%
-      r = Math.max(0, Math.floor(r * 0.8));
-      g = Math.max(0, Math.floor(g * 0.8));
-      b = Math.max(0, Math.floor(b * 0.8));
-    } else {
-      // Lighten the color by increasing RGB values by 20%
-      r = Math.min(255, Math.floor(r * 1.2));
-      g = Math.min(255, Math.floor(g * 1.2));
-      b = Math.min(255, Math.floor(b * 1.2));
-    }
-
-    // Convert RGB back to hex and ensure two characters
-    const toHex = (value) => {
-      const hex = value.toString(16).toUpperCase();
-      return hex.length === 1 ? '0' + hex : hex;
-    };
-
-    const adjustedHex = `#${toHex(r)}${toHex(g)}${toHex(b)}`;
-
-    return adjustedHex;
-  };
   return (
     <div
       className="mainDivDDDChart1"
@@ -103,8 +77,15 @@ const DDDChart1: React.FC<DDDChart1Props> = ({
           className="reachedDDDChart1"
           style={{
             width: `${percentage}%`,
+            borderTopLeftRadius: borderRadius,
+            borderBottomLeftRadius: borderRadius,
             backgroundColor: reachedColor,
-            boxShadow: `0px 8px 0px ${adjustColor(reachedColor)}`,
+            boxShadow: `
+      ${reachedColorDDD} 0px 0px,
+      ${reachedColorDDD} 2px 1px,
+      ${reachedColorDDD} 4px 2px,
+      ${reachedColorDDD} 6px 3px,
+      ${reachedColorDDD} 8px 4px`,
           }}
         ></div>
         <div
@@ -112,7 +93,14 @@ const DDDChart1: React.FC<DDDChart1Props> = ({
           style={{
             width: `${100 - percentage}%`,
             backgroundColor: notReachedColor,
-            boxShadow: `0px 6px 0px ${adjustColor(notReachedColor)}`,
+            borderTopRightRadius: borderRadius,
+            borderBottomRightRadius: borderRadius,
+            boxShadow: `
+      ${notReachedColorDDD} 0px 0px,
+      ${notReachedColorDDD} 1px 1px,
+      ${notReachedColorDDD} 2px 2px,
+      ${notReachedColorDDD} 3px 3px,
+      ${notReachedColorDDD} 4px 4px`,
           }}
         ></div>
       </div>
@@ -124,8 +112,6 @@ const DDDChart1: React.FC<DDDChart1Props> = ({
           }}
         >
           {text}
-          {adjustColor(reachedColor)}
-          {adjustColor(notReachedColor)}
         </p>
       )}
     </div>
