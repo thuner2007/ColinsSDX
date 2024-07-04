@@ -26,6 +26,7 @@ import SimpleDividerWithLabel1 from './components/Dividers/SimpleDividerWithLabe
 import ZoomPrimaryButton1 from './components/Buttons/ZoomPrimaryButton1/ZoomPrimaryButton1.tsx';
 import DreiDPrimaryButton1 from './components/Buttons/DreiDPrimaryButton1/DreiDPrimaryButton1.tsx';
 import SimpleToggle1 from './components/Toggles/SimpleToggle1/SimpleToggle1.tsx';
+import DDDChart1 from './components/Charts/DDDChart1/DDDChart1.tsx';
 function App() {
   const [show, setShow] = useState(false);
   const consoleLogHey = () => {
@@ -64,6 +65,7 @@ function App() {
       />
       <SimpleCard1 label="Card" />
       <SimpleChart1 percentage={33} label="Chart" text="This is a text..." />
+      <DDDChart1 percentage={33} label="3D Chart" text="This is a text..." />
       <SimpleCheckbox1 label="Checkbox" />
       <SimpleDivider1 />
       <SimpleDividerWithLabel1 label="Divider with Label" />

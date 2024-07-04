@@ -1,0 +1,34 @@
+.mainDivDDDChart1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.parentSliderDivDDDChart1 {
+  width: 100%;
+  margin: 0.2rem;
+  align-self: center;
+
+  display: flex;
+  flex-direction: row;
+
+  /* overflow: hidden; */
+}
+
+.reachedDDDChart1 .notReachedDDDChart1 {
+  height: 100%;
+  transition: width 0.5s;
+}
+
+.labelDDDChart1 {
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+.textDDDChart1 {
+  margin: 0;
+  padding: 0;
+
+  position: 'relative';
+  display: inline-block;
+}
