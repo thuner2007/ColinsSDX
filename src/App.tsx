@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
 import SimpleAccordion1 from './components/Accordions/SimpleAccordion1/SimpleAccordion1.tsx';
 import SimpleButton1 from './components/Buttons/SimplePrimaryButton1/SimplePrimaryButton1.tsx';
@@ -28,10 +28,6 @@ import DreiDPrimaryButton1 from './components/Buttons/DreiDPrimaryButton1/DreiDP
 import SimpleToggle1 from './components/Toggles/SimpleToggle1/SimpleToggle1.tsx';
 import DDDChart1 from './components/Charts/DDDChart1/DDDChart1.tsx';
 function App() {
-  const [show, setShow] = useState(false);
-  const consoleLogHey = () => {
-    console.log('Hey!');
-  };
   return (
     <div
       className="App"
@@ -41,7 +37,7 @@ function App() {
       <br />
       <br />
       <NavBarWithComponents1 height="60px">
-        <h1 style={{ color: 'white' }}>Welcome to CDX!</h1>{' '}
+        <h1 style={{ color: "white" }}>Welcome to CDX!</h1>{" "}
       </NavBarWithComponents1>
       <SimplePrimaryButton1 label="Primary" />
       <ZoomPrimaryButton1 label="Zoom Primary" />
@@ -50,16 +46,16 @@ function App() {
       <SimpleAccordion1
         items={[
           {
-            label: 'Accordion 1',
-            text: 'Text',
+            label: "Accordion 1",
+            text: "Text",
           },
           {
-            label: 'Accordion 2',
-            text: 'This is a long text...',
+            label: "Accordion 2",
+            text: "This is a long text...",
           },
           {
-            label: 'Accordion 3',
-            text: 'This is a long text</br>with a line break!',
+            label: "Accordion 3",
+            text: "This is a long text</br>with a line break!",
           },
         ]}
       />
