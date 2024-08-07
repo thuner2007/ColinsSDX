@@ -50,7 +50,7 @@ const HorizontalItemListDiv: React.FC<HorizontalItemListDivProps> = ({
         alignItems: alignItems || "center",
         justifyContent: justifyContent || "center",
         height: height || "auto",
-        width: width || "auto",
+        width: width || "100%",
       }}
     >
       {children}
