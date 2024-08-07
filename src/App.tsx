@@ -27,6 +27,7 @@ import ZoomPrimaryButton1 from './components/Buttons/ZoomPrimaryButton1/ZoomPrim
 import DreiDPrimaryButton1 from './components/Buttons/DreiDPrimaryButton1/DreiDPrimaryButton1.tsx';
 import SimpleToggle1 from './components/Toggles/SimpleToggle1/SimpleToggle1.tsx';
 import DDDChart1 from './components/Charts/DDDChart1/DDDChart1.tsx';
+import SimpleConfirmButton1 from './components/Buttons/SimpleConfirmButton1/SimpleConfirmButton1.tsx';
 function App() {
   return (
     <div
@@ -40,6 +41,7 @@ function App() {
         <h1 style={{ color: 'white' }}>Welcome to CDX!</h1>{' '}
       </NavBarWithComponents1>
       <SimplePrimaryButton1 label="Primary" />
+      <SimpleConfirmButton1 label="Confirm" />
       <ZoomPrimaryButton1 label="Zoom Primary" />
       <DreiDPrimaryButton1 label="3D Primary" />
       <SimpleSecondaryButton1 label="Secondary" />

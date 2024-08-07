@@ -4,6 +4,7 @@ export const cdx_config = {
   borderPrimary: '2px solid #7553BB',
   borderSecondary: '2px solid #7553BB',
   colorPrimary: 'white',
+  colorConfirm: '#298535',
   colorPrimaryDDD: '#9e9e9e',
   colorSecondary: '#7553BB',
   colorPlaceholder: 'lightgray',
