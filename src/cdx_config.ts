@@ -48,3 +48,29 @@ export const cdx_config = {
 //   colorPrimaryDiff: '#1A3A59', // Darker shade for contrast
 //   scrollbarWidth: '12px', // Thinner scrollbar for a cleaner look
 //   DDDcolor: '#3B7BBF', // Updated DDD color to match modern palette
+
+// bgColorPrimary: 'white', // Primary background color set to white
+//   bgColorSecondary: '#f5f5f5', // Light grey for secondary background
+//   borderPrimary: '2px solid #e0e0e0', // Light grey border
+//   borderSecondary: '2px solid #e0e0e0', // Light grey border for secondary elements
+//   colorPrimary: '#333333', // Dark grey for primary text color
+//   colorConfirm: '#4CAF50', // Green color for confirmation actions
+//   colorPrimaryDDD: '#9e9e9e', // Grey for disabled or less important text
+//   colorSecondary: '#787878', // Slightly darker shade for secondary text color
+//   colorPlaceholder: '#c0c0c0', // Light grey for placeholder text
+//   colorAlpha: 'rgba(63, 81, 181, 0.1)', // Transparent blue for alpha effects
+//   fontSizeLabel: '1.2rem', // Slightly smaller font size for labels
+//   fontSizeText: '1rem', // Standard font size for text
+//   borderRadius: '1rem', // Slightly rounded corners for elements
+//   boxShadow: '0 0 5px rgba(0, 0, 0, 0.8)', // Subtle shadow for depth
+//   padding: '0.75rem 1.5rem', // Slightly reduced padding for a cleaner look
+//   margin: '1rem', // Standard margin
+//   transformScale: '1', // No scaling transformation
+//   transitionTime: '0.2s', // Slightly quicker transition time
+//   label: 'Label', // Default label text
+//   gap: '1rem', // Reduced gap for tighter layout
+//   labelFontWeight: '400', // Regular font weight for labels
+//   colorPrimaryDiff: '#0e0226', // Dark color for differential primary
+//   colorPrimaryDiffDDD: '#290d61', // Darker shade for differential DDD
+//   scrollbarWidth: '12px', // Narrower scrollbar width
+//   DDDcolor: '#9e9e9e', // Default color for DDD elements

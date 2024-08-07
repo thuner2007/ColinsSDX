@@ -22,6 +22,7 @@ interface SimpleAccordion1Props {
   border?: string;
   labelFontWeight?: string;
   gap?: string;
+  boxShadow?: string;
 }
 
 const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
@@ -39,6 +40,7 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
   border = cdx_config.borderSecondary,
   labelFontWeight = cdx_config.labelFontWeight,
   gap = '0.5rem',
+  boxShadow = cdx_config.boxShadow,
 }) => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const contentRefs = useRef<(HTMLParagraphElement | null)[]>([]);
@@ -83,6 +85,7 @@ const SimpleAccordion1: React.FC<SimpleAccordion1Props> = ({
         margin: margin,
         border: border,
         gap: gap,
+        boxShadow: boxShadow,
       }}
     >
       {items?.map((item, index) => {
