@@ -38,7 +38,7 @@ const ZoomPrimaryButton1: React.FC<ZoomPrimaryButton1Props> = ({
   padding = cdx_config.padding,
   animation = 'zoom-in',
   transitionTime = cdx_config.transitionTime,
-  transitionStrength = 1.1,
+  transitionStrength = cdx_config.transformScale,
   onClick,
 }) => {
   return (
